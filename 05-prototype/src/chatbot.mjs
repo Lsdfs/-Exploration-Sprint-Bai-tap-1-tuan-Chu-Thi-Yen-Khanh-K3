@@ -122,7 +122,6 @@ export function createChatbot(hooks) {
     if (!model.active) { model.draft = newDraft(); model.active = true; }
     const {slots, notes, invalidFields} = extractBookingSlots(text, hooks.state.dates,model.draft);
     merge(slots,invalidFields); model.note = notes.join(' '); model.edit = ''; hooks.state.helpOpen = true; askNext();
-    if(hooks.state.miaPage)hooks.referenceBooking(model.draft);
   }
   function merge(slots,invalidFields=[]) {
     for (const field of invalidFields) { model.draft[field]=''; if(field==='date') model.draft.time=''; }
@@ -261,7 +260,7 @@ export function createChatbot(hooks) {
     else if (model.active) {
       const parsed = extractBookingSlots(text,hooks.state.dates,model.draft);
       if(model.question==='doctor' && /^(khong|khong can|ai cung duoc|bac si nao cung duoc)[.!\s]*$/.test(command)) parsed.slots.doctor='any';
-      if (Object.keys(parsed.slots).length || parsed.invalidFields.length) { merge(parsed.slots,parsed.invalidFields); model.note = parsed.notes.join(' '); model.edit = ''; askNext(); if(hooks.state.miaPage)hooks.referenceBooking(model.draft); }
+      if (Object.keys(parsed.slots).length || parsed.invalidFields.length) { merge(parsed.slots,parsed.invalidFields); model.note = parsed.notes.join(' '); model.edit = ''; askNext(); }
       else { model.note = parsed.notes.join(' ') || 'Mình chưa hiểu rõ. Bạn chọn một nút bên dưới hoặc nói lại ngắn gọn nhé.'; redraw(); }
     } else { redraw(); await hooks.ask(text); }
   }

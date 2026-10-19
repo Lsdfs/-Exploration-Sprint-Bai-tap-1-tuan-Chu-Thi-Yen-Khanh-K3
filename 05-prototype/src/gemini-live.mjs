@@ -15,16 +15,19 @@ if(typeof window!=='undefined'){
 export async function transcribeGeminiLive(stream,signal,{onPartial=()=>{},onReady=()=>{},onCommit=()=>{}}={}){
   let socket,context,source,node,gain,timer,deadline,closed=false,ending=false,finalText='',speechMs=0,lastSound=0;
   const controller=new AbortController();const tracks=stream.getAudioTracks();
-  let reusable=false,reusedCapture;
+  let reusable=false,reusedCapture,pendingInterim=false;
   let resolve,reject;const result=new Promise((yes,no)=>{resolve=yes;reject=no;});void result.catch(()=>{});
   const fail=()=>reject(new Error('Kết nối Gemini live bị gián đoạn. Cô/chú thử lại nhé.'));
   const abort=()=>reject(new DOMException('Đã dừng nghe.','AbortError'));
   signal.addEventListener('abort',abort,{once:true});
   const send=value=>{if(socket?.readyState===1)socket.send(JSON.stringify(value));};
+  const complete=()=>{reusable=true;resolve(finalText.trim());};
   const finish=()=>{
     if(closed||ending)return;ending=true;tracks.forEach(track=>{track.enabled=false;});onCommit();
     send({realtimeInput:{audioStreamEnd:true}});
-    deadline=setTimeout(()=>finalText.trim()?resolve(finalText.trim()):reject(new Error('Chưa nghe rõ lời nói. Cô/chú thử lại nhé.')),10000);
+    if(finalText.trim()&&!pendingInterim){complete();return;}
+    // Timeout reports missing final text; it must not delay a finalized transcript.
+    deadline=setTimeout(()=>reject(new Error('Chưa nhận được lời nói hoàn tất. Cô/chú thử lại nhé.')),10000);
   };
   try{
     signal.throwIfAborted();
@@ -65,10 +68,10 @@ export async function transcribeGeminiLive(stream,signal,{onPartial=()=>{},onRea
             tracks.forEach(track=>{track.enabled=true;});onReady({finish});
           }
           const content=event.serverContent;if(!content)return;
-          if(content.interimInputTranscription?.text)onPartial(finalText+content.interimInputTranscription.text);
-          if(content.inputTranscription?.text){finalText+=content.inputTranscription.text;onPartial(finalText);}
+          if(content.interimInputTranscription?.text){pendingInterim=true;onPartial(finalText+content.interimInputTranscription.text);}
+          if(content.inputTranscription?.text){pendingInterim=false;finalText+=content.inputTranscription.text;onPartial(finalText);}
           if(finalText.length>500)throw Error('Câu nói quá dài.');
-          if(content.turnComplete&&finalText.trim()){reusable=true;resolve(finalText.trim());}
+          if(finalText.trim()&&(content.turnComplete||(ending&&!pendingInterim&&content.inputTranscription?.text)))complete();
         }catch{fail();}
       };
       if(!credentials)await socket.onmessage({data:'{"setupComplete":{}}'});
