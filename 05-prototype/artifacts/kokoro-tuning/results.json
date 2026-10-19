@@ -1,0 +1,132 @@
+{
+  "voice": "Thành Đạt",
+  "networkDisabled": true,
+  "audioCache": false,
+  "results": [
+    {
+      "threads": 1,
+      "sentences": [
+        {
+          "text": "Cô chú muốn đặt lịch khám vào ngày nào?",
+          "ms": [
+            2451.8,
+            2364.7,
+            2582.0
+          ],
+          "file": "thanh-dat-threads-1-sentence-1.wav"
+        },
+        {
+          "text": "Cô chú kiểm tra ngày và giờ khám trước khi xác nhận nhé.",
+          "ms": [
+            4746.4,
+            4230.2,
+            4555.0
+          ],
+          "file": "thanh-dat-threads-1-sentence-2.wav"
+        }
+      ],
+      "worstMs": 4746.4,
+      "allUnder300": false
+    },
+    {
+      "threads": 2,
+      "sentences": [
+        {
+          "text": "Cô chú muốn đặt lịch khám vào ngày nào?",
+          "ms": [
+            1690.0,
+            1434.2,
+            1303.7
+          ],
+          "file": "thanh-dat-threads-2-sentence-1.wav"
+        },
+        {
+          "text": "Cô chú kiểm tra ngày và giờ khám trước khi xác nhận nhé.",
+          "ms": [
+            2424.9,
+            2031.3,
+            3140.6
+          ],
+          "file": "thanh-dat-threads-2-sentence-2.wav"
+        }
+      ],
+      "worstMs": 3140.6,
+      "allUnder300": false
+    },
+    {
+      "threads": 4,
+      "sentences": [
+        {
+          "text": "Cô chú muốn đặt lịch khám vào ngày nào?",
+          "ms": [
+            1295.6,
+            1466.6,
+            1832.6
+          ],
+          "file": "thanh-dat-threads-4-sentence-1.wav"
+        },
+        {
+          "text": "Cô chú kiểm tra ngày và giờ khám trước khi xác nhận nhé.",
+          "ms": [
+            2207.1,
+            1824.1,
+            1886.6
+          ],
+          "file": "thanh-dat-threads-4-sentence-2.wav"
+        }
+      ],
+      "worstMs": 2207.1,
+      "allUnder300": false
+    },
+    {
+      "threads": 8,
+      "sentences": [
+        {
+          "text": "Cô chú muốn đặt lịch khám vào ngày nào?",
+          "ms": [
+            1148.4,
+            1048.4,
+            1035.3
+          ],
+          "file": "thanh-dat-threads-8-sentence-1.wav"
+        },
+        {
+          "text": "Cô chú kiểm tra ngày và giờ khám trước khi xác nhận nhé.",
+          "ms": [
+            1954.5,
+            1786.0,
+            1526.9
+          ],
+          "file": "thanh-dat-threads-8-sentence-2.wav"
+        }
+      ],
+      "worstMs": 1954.5,
+      "allUnder300": false
+    }
+  ],
+  "best": {
+    "threads": 8,
+    "sentences": [
+      {
+        "text": "Cô chú muốn đặt lịch khám vào ngày nào?",
+        "ms": [
+          1148.4,
+          1048.4,
+          1035.3
+        ],
+        "file": "thanh-dat-threads-8-sentence-1.wav"
+      },
+      {
+        "text": "Cô chú kiểm tra ngày và giờ khám trước khi xác nhận nhé.",
+        "ms": [
+          1954.5,
+          1786.0,
+          1526.9
+        ],
+        "file": "thanh-dat-threads-8-sentence-2.wav"
+      }
+    ],
+    "worstMs": 1954.5,
+    "allUnder300": false
+  }
+}

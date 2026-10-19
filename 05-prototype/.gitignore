@@ -1,0 +1,5 @@
+# Machine-local TTS runtime. Downloaded model stays in tts/models.
+.tts-venv/
+.kokoro-venv/
+tts/models/vieneu/
+tts/models/kokoro-vi/

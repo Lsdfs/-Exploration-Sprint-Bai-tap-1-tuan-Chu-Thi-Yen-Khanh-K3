@@ -1,0 +1,166 @@
+{
+  "testedAt": "2026-10-19T15:39:53.501Z",
+  "upstream": [
+    {
+      "status": 201,
+      "endpoint": "/v1/realtime/calls"
+    },
+    {
+      "status": 200,
+      "endpoint": "/v1/responses"
+    }
+  ],
+  "errors": [],
+  "diagnostics": {
+    "states": [
+      "ice:checking",
+      "connecting",
+      "ice:connected",
+      "connected",
+      "channel:open"
+    ],
+    "events": [
+      {
+        "type": "session.created",
+        "ms": 3562
+      },
+      {
+        "type": "session.updated",
+        "ms": 3563
+      },
+      {
+        "type": "input_audio_buffer.speech_started",
+        "ms": 3784
+      },
+      {
+        "type": "input_audio_buffer.speech_stopped",
+        "ms": 8769
+      },
+      {
+        "type": "input_audio_buffer.committed",
+        "ms": 8770
+      },
+      {
+        "type": "conversation.item.added",
+        "ms": 8770
+      },
+      {
+        "type": "conversation.item.done",
+        "ms": 8777
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9009
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9033
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9062
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9062
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9072
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9074
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9080
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9089
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9101
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9111
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9120
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9131
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9138
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9145
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta",
+        "ms": 9151
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.completed",
+        "ms": 9399
+      }
+    ],
+    "timings": [
+      {
+        "name": "/api/config:request",
+        "ms": 183
+      },
+      {
+        "name": "/api/config:headers",
+        "ms": 307
+      },
+      {
+        "name": "/api/voice:request",
+        "ms": 1660
+      },
+      {
+        "name": "/api/voice:headers",
+        "ms": 2447
+      },
+      {
+        "name": "speech:start",
+        "ms": 3345
+      },
+      {
+        "name": "/api/help:request",
+        "ms": 9459
+      },
+      {
+        "name": "/api/help:headers",
+        "ms": 10979
+      },
+      {
+        "name": "/api/tts:request",
+        "ms": 11119
+      },
+      {
+        "name": "/api/tts:request",
+        "ms": 11287
+      },
+      {
+        "name": "/api/tts:headers",
+        "ms": 12820
+      }
+    ],
+    "playing": [
+      12866
+    ],
+    "speechDurationMs": 4288
+  },
+  "transcript": "Xin chào công chúa, mình là Mi trợ lý của bạn.",
+  "status": "Âm thanh được gửi tới OpenAI. Ví dụ: “Tôi muốn đặt lịch khám”. Mia sẽ trả lời khi cô/chú nói xong.",
+  "pass": true
+}

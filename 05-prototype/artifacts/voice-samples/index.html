@@ -1,0 +1,371 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Nghe thử các giọng đã cài</title>
+<style>body{font:17px system-ui;max-width:1000px;margin:30px auto;padding:16px;background:#f4f7fa;color:#183348}article{background:white;border-radius:12px;padding:16px;margin:16px 0}audio{width:100%}select{font:inherit;margin:6px;padding:8px}h2{margin:0}label{display:inline-block}</style>
+<h1>Giọng đang có trên máy</h1><p id="count"></p><p>Cùng câu mẫu: <strong>Xin chào cô chú. Mia có thể giúp cô chú đặt lịch khám.</strong></p>
+<p>Đo hai lần sau khi nạp và làm nóng model, không dùng cache âm thanh. Đây là thời gian tạo xong cả WAV, không phải thời gian đến đoạn âm thanh đầu tiên. Thứ tự ưu tiên những giọng nhanh. Dưới 300 ms trong hai lần đo không bảo đảm mọi câu hoặc lúc máy bận đều đạt.</p>
+<label>Model <select id="engine"><option value="">Tất cả</option><option>vivos</option><option>vais1000</option><option>vieneu</option></select></label>
+<label>Giới tính theo preset <select id="gender"><option value="">Tất cả</option><option value="male">Nam</option><option value="female">Nữ</option><option value="unknown">Chưa có nhãn (Piper)</option></select></label>
+<label><input id="fast" type="checkbox"> Chỉ giọng dưới 300 ms ở cả hai lần đo</label>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV03</h2><p>Piper · speaker 47 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>112.9 / 112.0 ms</b> · Audio 3.14 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev03.wav"></audio><p><a href="vivos-vivosdev03.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK23</h2><p>Piper · speaker 44 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>118.6 / 118.4 ms</b> · Audio 3.22 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk23.wav"></audio><p><a href="vivos-vivosspk23.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV09</h2><p>Piper · speaker 54 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>108.1 / 118.9 ms</b> · Audio 2.99 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev09.wav"></audio><p><a href="vivos-vivosdev09.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV08</h2><p>Piper · speaker 53 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>119.9 / 115.4 ms</b> · Audio 3.22 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev08.wav"></audio><p><a href="vivos-vivosdev08.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV05</h2><p>Piper · speaker 50 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>113.9 / 121.0 ms</b> · Audio 3.46 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev05.wav"></audio><p><a href="vivos-vivosdev05.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK16</h2><p>Piper · speaker 3 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>122.4 / 110.7 ms</b> · Audio 3.04 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk16.wav"></audio><p><a href="vivos-vivosspk16.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV04</h2><p>Piper · speaker 49 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>112.9 / 122.7 ms</b> · Audio 3.46 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev04.wav"></audio><p><a href="vivos-vivosdev04.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK18</h2><p>Piper · speaker 5 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>119.2 / 123.4 ms</b> · Audio 3.02 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk18.wav"></audio><p><a href="vivos-vivosspk18.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK28</h2><p>Piper · speaker 41 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>124.8 / 118.0 ms</b> · Audio 3.2 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk28.wav"></audio><p><a href="vivos-vivosspk28.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK40</h2><p>Piper · speaker 12 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>129.4 / 123.0 ms</b> · Audio 3.65 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk40.wav"></audio><p><a href="vivos-vivosspk40.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK43</h2><p>Piper · speaker 15 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>128.9 / 130.8 ms</b> · Audio 3.7 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk43.wav"></audio><p><a href="vivos-vivosspk43.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV12</h2><p>Piper · speaker 57 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>122.9 / 131.2 ms</b> · Audio 3.63 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev12.wav"></audio><p><a href="vivos-vivosdev12.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV01</h2><p>Piper · speaker 48 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>132.1 / 120.3 ms</b> · Audio 3.55 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev01.wav"></audio><p><a href="vivos-vivosdev01.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK24</h2><p>Piper · speaker 45 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>130.5 / 134.5 ms</b> · Audio 3.62 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk24.wav"></audio><p><a href="vivos-vivosspk24.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK03</h2><p>Piper · speaker 24 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>128.7 / 136.1 ms</b> · Audio 3.3 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk03.wav"></audio><p><a href="vivos-vivosspk03.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV14</h2><p>Piper · speaker 59 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>138.1 / 120.8 ms</b> · Audio 3.39 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev14.wav"></audio><p><a href="vivos-vivosdev14.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV18</h2><p>Piper · speaker 63 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>117.2 / 138.2 ms</b> · Audio 3.54 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev18.wav"></audio><p><a href="vivos-vivosdev18.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV11</h2><p>Piper · speaker 56 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>138.4 / 138.3 ms</b> · Audio 3.81 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev11.wav"></audio><p><a href="vivos-vivosdev11.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK34</h2><p>Piper · speaker 11 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>139.5 / 118.5 ms</b> · Audio 3.09 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk34.wav"></audio><p><a href="vivos-vivosspk34.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV02</h2><p>Piper · speaker 46 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>139.8 / 132.6 ms</b> · Audio 3.65 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev02.wav"></audio><p><a href="vivos-vivosdev02.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK17</h2><p>Piper · speaker 4 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>132.6 / 139.9 ms</b> · Audio 3.89 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk17.wav"></audio><p><a href="vivos-vivosspk17.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK05</h2><p>Piper · speaker 26 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>134.9 / 141.5 ms</b> · Audio 3.58 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk05.wav"></audio><p><a href="vivos-vivosspk05.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK22</h2><p>Piper · speaker 9 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>128.9 / 142.5 ms</b> · Audio 3.79 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk22.wav"></audio><p><a href="vivos-vivosspk22.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK26</h2><p>Piper · speaker 10 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>142.5 / 131.4 ms</b> · Audio 3.36 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk26.wav"></audio><p><a href="vivos-vivosspk26.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK42</h2><p>Piper · speaker 14 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>143.1 / 130.4 ms</b> · Audio 3.94 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk42.wav"></audio><p><a href="vivos-vivosspk42.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV16</h2><p>Piper · speaker 61 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>146.1 / 134.0 ms</b> · Audio 3.7 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev16.wav"></audio><p><a href="vivos-vivosdev16.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV17</h2><p>Piper · speaker 62 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>146.2 / 129.7 ms</b> · Audio 3.7 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev17.wav"></audio><p><a href="vivos-vivosdev17.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK39</h2><p>Piper · speaker 39 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>147.2 / 132.2 ms</b> · Audio 3.12 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk39.wav"></audio><p><a href="vivos-vivosspk39.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV15</h2><p>Piper · speaker 60 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>149.1 / 138.0 ms</b> · Audio 3.84 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev15.wav"></audio><p><a href="vivos-vivosdev15.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK36</h2><p>Piper · speaker 35 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>149.3 / 132.8 ms</b> · Audio 3.07 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk36.wav"></audio><p><a href="vivos-vivosspk36.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK15</h2><p>Piper · speaker 2 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>143.3 / 150.9 ms</b> · Audio 4.03 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk15.wav"></audio><p><a href="vivos-vivosspk15.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK02</h2><p>Piper · speaker 23 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>150.9 / 138.8 ms</b> · Audio 3.66 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk02.wav"></audio><p><a href="vivos-vivosspk02.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK11</h2><p>Piper · speaker 32 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>152.9 / 150.0 ms</b> · Audio 3.58 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk11.wav"></audio><p><a href="vivos-vivosspk11.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK29</h2><p>Piper · speaker 38 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>151.9 / 152.9 ms</b> · Audio 3.7 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk29.wav"></audio><p><a href="vivos-vivosspk29.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK19</h2><p>Piper · speaker 6 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>154.2 / 150.6 ms</b> · Audio 4.34 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk19.wav"></audio><p><a href="vivos-vivosspk19.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK09</h2><p>Piper · speaker 30 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>155.5 / 153.6 ms</b> · Audio 3.42 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk09.wav"></audio><p><a href="vivos-vivosspk09.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV10</h2><p>Piper · speaker 55 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>158.9 / 134.0 ms</b> · Audio 3.68 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev10.wav"></audio><p><a href="vivos-vivosdev10.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK33</h2><p>Piper · speaker 36 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>148.8 / 159.1 ms</b> · Audio 3.57 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk33.wav"></audio><p><a href="vivos-vivosspk33.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK06</h2><p>Piper · speaker 27 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>158.3 / 159.6 ms</b> · Audio 4.1 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk06.wav"></audio><p><a href="vivos-vivosspk06.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK25</h2><p>Piper · speaker 40 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>160.2 / 142.0 ms</b> · Audio 4.1 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk25.wav"></audio><p><a href="vivos-vivosspk25.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK44</h2><p>Piper · speaker 16 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>154.9 / 160.6 ms</b> · Audio 3.71 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk44.wav"></audio><p><a href="vivos-vivosspk44.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK10</h2><p>Piper · speaker 31 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>160.8 / 162.0 ms</b> · Audio 3.78 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk10.wav"></audio><p><a href="vivos-vivosspk10.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK13</h2><p>Piper · speaker 0 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>159.7 / 165.3 ms</b> · Audio 4.46 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk13.wav"></audio><p><a href="vivos-vivosspk13.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK32</h2><p>Piper · speaker 37 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>155.8 / 168.7 ms</b> · Audio 4.21 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk32.wav"></audio><p><a href="vivos-vivosspk32.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK46</h2><p>Piper · speaker 18 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>136.0 / 170.6 ms</b> · Audio 3.58 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk46.wav"></audio><p><a href="vivos-vivosspk46.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK30</h2><p>Piper · speaker 42 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>139.6 / 171.8 ms</b> · Audio 4.29 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk30.wav"></audio><p><a href="vivos-vivosspk30.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK27</h2><p>Piper · speaker 34 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>172.6 / 153.7 ms</b> · Audio 3.58 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk27.wav"></audio><p><a href="vivos-vivosspk27.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK21</h2><p>Piper · speaker 8 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>157.8 / 179.6 ms</b> · Audio 4.96 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk21.wav"></audio><p><a href="vivos-vivosspk21.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK01</h2><p>Piper · speaker 22 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>186.7 / 127.8 ms</b> · Audio 3.44 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk01.wav"></audio><p><a href="vivos-vivosspk01.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK20</h2><p>Piper · speaker 7 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>123.4 / 187.4 ms</b> · Audio 2.93 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk20.wav"></audio><p><a href="vivos-vivosspk20.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK08</h2><p>Piper · speaker 29 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>196.4 / 143.5 ms</b> · Audio 3.44 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk08.wav"></audio><p><a href="vivos-vivosspk08.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK12</h2><p>Piper · speaker 33 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>203.7 / 177.4 ms</b> · Audio 3.71 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk12.wav"></audio><p><a href="vivos-vivosspk12.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK35</h2><p>Piper · speaker 21 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>176.2 / 211.4 ms</b> · Audio 3.98 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk35.wav"></audio><p><a href="vivos-vivosspk35.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK41</h2><p>Piper · speaker 13 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>219.7 / 127.9 ms</b> · Audio 3.47 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk41.wav"></audio><p><a href="vivos-vivosspk41.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK38</h2><p>Piper · speaker 19 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>156.5 / 226.7 ms</b> · Audio 2.96 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk38.wav"></audio><p><a href="vivos-vivosspk38.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV19</h2><p>Piper · speaker 64 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>231.1 / 147.1 ms</b> · Audio 3.52 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev19.wav"></audio><p><a href="vivos-vivosdev19.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK07</h2><p>Piper · speaker 28 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>233.5 / 207.4 ms</b> · Audio 3.71 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk07.wav"></audio><p><a href="vivos-vivosspk07.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK37</h2><p>Piper · speaker 43 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>237.8 / 152.3 ms</b> · Audio 3.47 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk37.wav"></audio><p><a href="vivos-vivosspk37.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK45</h2><p>Piper · speaker 17 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>258.1 / 196.6 ms</b> · Audio 3.34 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk45.wav"></audio><p><a href="vivos-vivosspk45.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV13</h2><p>Piper · speaker 58 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>260.2 / 149.5 ms</b> · Audio 3.89 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev13.wav"></audio><p><a href="vivos-vivosdev13.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSDEV07</h2><p>Piper · speaker 52 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>267.1 / 132.3 ms</b> · Audio 3.62 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev07.wav"></audio><p><a href="vivos-vivosdev07.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK31</h2><p>Piper · speaker 20 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>276.7 / 269.8 ms</b> · Audio 3.23 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk31.wav"></audio><p><a href="vivos-vivosspk31.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="true">
+<h2>VIVOSSPK14</h2><p>Piper · speaker 1 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>170.8 / 290.3 ms</b> · Audio 3.95 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk14.wav"></audio><p><a href="vivos-vivosspk14.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="false">
+<h2>VIVOSDEV06</h2><p>Piper · speaker 51 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>138.8 / 365.6 ms</b> · Audio 3.68 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosdev06.wav"></audio><p><a href="vivos-vivosdev06.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vivos" data-gender="unknown" data-fast="false">
+<h2>VIVOSSPK04</h2><p>Piper · speaker 25 · vivos</p>
+<p>Tạo toàn bộ WAV: <b>384.6 / 168.7 ms</b> · Audio 3.41 giây · 16000 Hz</p>
+<audio controls preload="none" src="vivos-vivosspk04.wav"></audio><p><a href="vivos-vivosspk04.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vais1000" data-gender="unknown" data-fast="false">
+<h2>VAIS1000</h2><p>Piper · speaker 0 · vais1000</p>
+<p>Tạo toàn bộ WAV: <b>914.1 / 667.2 ms</b> · Audio 2.62 giây · 22050 Hz</p>
+<audio controls preload="none" src="vais1000-vais1000.wav"></audio><p><a href="vais1000-vais1000.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Hải Đăng</h2><p>Nam · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>1888.4 / 1855.8 ms</b> · Audio 3.2 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-hai-ang.wav"></audio><p><a href="vieneu-hai-ang.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Trúc Ly</h2><p>Nữ · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2032.8 / 1726.6 ms</b> · Audio 2.96 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-truc-ly.wav"></audio><p><a href="vieneu-truc-ly.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Thùy Dung</h2><p>Nữ · Nam · Phong cách tin tức · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>1835.5 / 2036.4 ms</b> · Audio 3.04 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-thuy-dung.wav"></audio><p><a href="vieneu-thuy-dung.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Quốc Tuấn</h2><p>Nam · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>1935.8 / 2068.2 ms</b> · Audio 3.44 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-quoc-tuan.wav"></audio><p><a href="vieneu-quoc-tuan.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Adam</h2><p>Nam · Nam · Giọng đọc tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2074.6 / 1768.4 ms</b> · Audio 3.36 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-adam.wav"></audio><p><a href="vieneu-adam.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Thanh Bình</h2><p>Nam · Bắc · Phong cách kể chuyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2101.6 / 2068.1 ms</b> · Audio 3.28 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-thanh-binh.wav"></audio><p><a href="vieneu-thanh-binh.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Thiện Minh</h2><p>Nam · Bắc · Phong cách kể chuyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2179.8 / 2158.6 ms</b> · Audio 3.12 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-thien-minh.wav"></audio><p><a href="vieneu-thien-minh.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Quỳnh Anh</h2><p>Nữ · Bắc · Phong cách đọc truyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2345.7 / 2044.5 ms</b> · Audio 3.6 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-quynh-anh.wav"></audio><p><a href="vieneu-quynh-anh.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Ngọc Trân</h2><p>Nữ · Trung · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2080.9 / 2353.0 ms</b> · Audio 3.84 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-ngoc-tran.wav"></audio><p><a href="vieneu-ngoc-tran.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Thục Đoan</h2><p>Nữ · Nam · Phong cách kể chuyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2365.5 / 2218.5 ms</b> · Audio 3.68 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-thuc-oan.wav"></audio><p><a href="vieneu-thuc-oan.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Thái Sơn</h2><p>Nam · Nam · Phong cách kể chuyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2363.6 / 2494.1 ms</b> · Audio 3.68 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-thai-son.wav"></audio><p><a href="vieneu-thai-son.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Quang Sơn</h2><p>Nam · Trung · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2496.7 / 2194.2 ms</b> · Audio 4.0 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-quang-son.wav"></audio><p><a href="vieneu-quang-son.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Minh Triết</h2><p>Nam · Nam · Phong cách tin tức · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2576.1 / 2011.2 ms</b> · Audio 3.2 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-minh-triet.wav"></audio><p><a href="vieneu-minh-triet.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Đoan Trang</h2><p>Nữ · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2341.8 / 2577.5 ms</b> · Audio 3.68 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-oan-trang.wav"></audio><p><a href="vieneu-oan-trang.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Minh Đức</h2><p>Nam · Bắc · Phong cách tin tức · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2593.9 / 2256.4 ms</b> · Audio 4.0 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-minh-uc.wav"></audio><p><a href="vieneu-minh-uc.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Xuân Vĩnh</h2><p>Nam · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2632.2 / 2600.9 ms</b> · Audio 3.36 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-xuan-vinh.wav"></audio><p><a href="vieneu-xuan-vinh.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Phạm Tuyên</h2><p>Nam · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2128.0 / 2726.6 ms</b> · Audio 3.92 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-pham-tuyen.wav"></audio><p><a href="vieneu-pham-tuyen.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Mai Anh</h2><p>Nữ · Bắc · Phong cách tin tức · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2300.7 / 2801.4 ms</b> · Audio 3.68 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-mai-anh.wav"></audio><p><a href="vieneu-mai-anh.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Ngọc Huyền</h2><p>Nữ · Bắc · Giọng đọc tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2839.8 / 2503.9 ms</b> · Audio 3.44 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-ngoc-huyen.wav"></audio><p><a href="vieneu-ngoc-huyen.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Kim Thanh</h2><p>Nữ · Nam · Phong cách đọc truyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2596.5 / 2890.0 ms</b> · Audio 4.4 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-kim-thanh.wav"></audio><p><a href="vieneu-kim-thanh.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Mỹ Duyên</h2><p>Nữ · Nam · Phong cách đọc truyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2830.8 / 2901.9 ms</b> · Audio 4.16 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-my-duyen.wav"></audio><p><a href="vieneu-my-duyen.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Adam bựa</h2><p>Nam · Bắc · Phong cách tự nhiên · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>2478.5 / 2923.8 ms</b> · Audio 3.76 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-adam-bua.wav"></audio><p><a href="vieneu-adam-bua.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Thiền Tâm Đức</h2><p>Nam · Bắc · Phong cách kể chuyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>3252.3 / 2824.2 ms</b> · Audio 4.48 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-thien-tam-uc.wav"></audio><p><a href="vieneu-thien-tam-uc.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="male" data-fast="false">
+<h2>Đức Trí</h2><p>Nam · Nam · Phong cách đọc truyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>3302.1 / 2958.1 ms</b> · Audio 4.64 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-uc-tri.wav"></audio><p><a href="vieneu-uc-tri.wav" download>Tải file mẫu</a></p></article>
+<article data-engine="vieneu" data-gender="female" data-fast="false">
+<h2>Ngọc Linh</h2><p>Nữ · Bắc · Phong cách kể chuyện · vieneu</p>
+<p>Tạo toàn bộ WAV: <b>3217.5 / 3492.0 ms</b> · Audio 3.44 giây · 48000 Hz</p>
+<audio controls preload="none" src="vieneu-ngoc-linh.wav"></audio><p><a href="vieneu-ngoc-linh.wav" download>Tải file mẫu</a></p></article><script>function filter(){let n=0;document.querySelectorAll('article').forEach(a=>{a.hidden=(engine.value&&a.dataset.engine!==engine.value)||(gender.value&&a.dataset.gender!==gender.value)||(fast.checked&&a.dataset.fast!=='true');if(!a.hidden)n++;});document.querySelector('#count').textContent=n+' giọng';}document.querySelectorAll('select,input').forEach(e=>e.onchange=filter);document.addEventListener('play',e=>{document.querySelectorAll('audio').forEach(a=>{if(a!==e.target)a.pause();});},true);filter();</script></html>

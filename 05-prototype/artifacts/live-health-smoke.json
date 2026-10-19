@@ -1,0 +1,24 @@
+{
+  "testedAt": "2026-10-19T05:29:47.768Z",
+  "cases": [
+    {
+      "mode": "nutrition",
+      "status": 200,
+      "provider": "openai",
+      "fallback": false,
+      "firstTextMs": 1767,
+      "completeMs": 3735,
+      "text": "Cảm ơn bạn đã cung cấp thông tin! Với khẩu phần bạn mô tả, tôi ước tính như sau:\n\n- Cơm trắng chín 200g: khoảng 260 kcal, 5g protein, 57g carbohydrate, 0.4g chất béo, 1g chất xơ  \n- Ức gà luộc bỏ da 100g: khoảng 165 kcal, 31g protein, 0g carbohydrate, 3.6g chất béo, 0g chất xơ  \n- Rau cải luộc 100g (không dầu, không sốt): khoảng 20 kcal, 2g protein, 4g carbohydrate, 0.1g chất béo, 2g chất xơ  \n\nTổng cộng khoảng:  \n**445 kcal**  \nProtein: ~38g  \nCarbohydrate: ~61g  \nChất béo: ~4g  \nChất xơ: ~3g  \n\nBữa ăn này có lượng protein khá cao, carbs vừa phải, chất béo thấp và chất xơ từ rau cải giúp tiêu hóa khỏe. Bạn muốn tôi gợi ý thêm món hoặc điều chỉnh khẩu phần nào không?"
+    },
+    {
+      "mode": "symptoms",
+      "status": 200,
+      "provider": "openai",
+      "fallback": false,
+      "firstTextMs": 1444,
+      "completeMs": 2646,
+      "text": "Bạn bị nghẹt mũi và hắt hơi nhẹ trong 1 ngày, không sốt, không khó thở và sinh hoạt bình thường.\n\nBạn nên theo dõi thêm các dấu hiệu sau:\n\n- Nghẹt mũi hoặc hắt hơi có nặng lên hay kéo dài quá 7-10 ngày không.\n- Có xuất hiện sốt, đau đầu, đau họng, ho hoặc khó thở không.\n- Có bất kỳ triệu chứng nào khác bất thường như sưng mặt, hoặc thay đổi giọng nói.\n\nBạn đang bị dị ứng, cảm lạnh hoặc viêm mũi thông thường có thể là nguyên nhân. Nếu triệu chứng tăng nặng hoặc xuất hiện những dấu hiệu kể trên, bạn nên đi khám bác sĩ để được tư vấn và xử trí phù hợp.\n\nBạn có thường bị dị ứng vào mùa này không, hoặc có tiếp xúc với ai đang bị cảm cúm, dị ứng hay không?"
+    }
+  ],
+  "pass": true
+}

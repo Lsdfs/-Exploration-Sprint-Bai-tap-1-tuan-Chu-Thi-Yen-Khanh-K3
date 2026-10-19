@@ -1,0 +1,1370 @@
+{
+  "text": "Xin chào cô chú. Mia có thể giúp cô chú đặt lịch khám.",
+  "voices": [
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK13",
+      "description": "Piper · speaker 0",
+      "gender": "unknown",
+      "file": "vivos-vivosspk13.wav",
+      "generationMs": [
+        159.7,
+        165.3
+      ],
+      "maxMs": 165.3,
+      "under300": true,
+      "audioSeconds": 4.46,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK14",
+      "description": "Piper · speaker 1",
+      "gender": "unknown",
+      "file": "vivos-vivosspk14.wav",
+      "generationMs": [
+        170.8,
+        290.3
+      ],
+      "maxMs": 290.3,
+      "under300": true,
+      "audioSeconds": 3.95,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK15",
+      "description": "Piper · speaker 2",
+      "gender": "unknown",
+      "file": "vivos-vivosspk15.wav",
+      "generationMs": [
+        143.3,
+        150.9
+      ],
+      "maxMs": 150.9,
+      "under300": true,
+      "audioSeconds": 4.03,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK16",
+      "description": "Piper · speaker 3",
+      "gender": "unknown",
+      "file": "vivos-vivosspk16.wav",
+      "generationMs": [
+        122.4,
+        110.7
+      ],
+      "maxMs": 122.4,
+      "under300": true,
+      "audioSeconds": 3.04,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK17",
+      "description": "Piper · speaker 4",
+      "gender": "unknown",
+      "file": "vivos-vivosspk17.wav",
+      "generationMs": [
+        132.6,
+        139.9
+      ],
+      "maxMs": 139.9,
+      "under300": true,
+      "audioSeconds": 3.89,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK18",
+      "description": "Piper · speaker 5",
+      "gender": "unknown",
+      "file": "vivos-vivosspk18.wav",
+      "generationMs": [
+        119.2,
+        123.4
+      ],
+      "maxMs": 123.4,
+      "under300": true,
+      "audioSeconds": 3.02,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK19",
+      "description": "Piper · speaker 6",
+      "gender": "unknown",
+      "file": "vivos-vivosspk19.wav",
+      "generationMs": [
+        154.2,
+        150.6
+      ],
+      "maxMs": 154.2,
+      "under300": true,
+      "audioSeconds": 4.34,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK20",
+      "description": "Piper · speaker 7",
+      "gender": "unknown",
+      "file": "vivos-vivosspk20.wav",
+      "generationMs": [
+        123.4,
+        187.4
+      ],
+      "maxMs": 187.4,
+      "under300": true,
+      "audioSeconds": 2.93,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK21",
+      "description": "Piper · speaker 8",
+      "gender": "unknown",
+      "file": "vivos-vivosspk21.wav",
+      "generationMs": [
+        157.8,
+        179.6
+      ],
+      "maxMs": 179.6,
+      "under300": true,
+      "audioSeconds": 4.96,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK22",
+      "description": "Piper · speaker 9",
+      "gender": "unknown",
+      "file": "vivos-vivosspk22.wav",
+      "generationMs": [
+        128.9,
+        142.5
+      ],
+      "maxMs": 142.5,
+      "under300": true,
+      "audioSeconds": 3.79,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK26",
+      "description": "Piper · speaker 10",
+      "gender": "unknown",
+      "file": "vivos-vivosspk26.wav",
+      "generationMs": [
+        142.5,
+        131.4
+      ],
+      "maxMs": 142.5,
+      "under300": true,
+      "audioSeconds": 3.36,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK34",
+      "description": "Piper · speaker 11",
+      "gender": "unknown",
+      "file": "vivos-vivosspk34.wav",
+      "generationMs": [
+        139.5,
+        118.5
+      ],
+      "maxMs": 139.5,
+      "under300": true,
+      "audioSeconds": 3.09,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK40",
+      "description": "Piper · speaker 12",
+      "gender": "unknown",
+      "file": "vivos-vivosspk40.wav",
+      "generationMs": [
+        129.4,
+        123.0
+      ],
+      "maxMs": 129.4,
+      "under300": true,
+      "audioSeconds": 3.65,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK41",
+      "description": "Piper · speaker 13",
+      "gender": "unknown",
+      "file": "vivos-vivosspk41.wav",
+      "generationMs": [
+        219.7,
+        127.9
+      ],
+      "maxMs": 219.7,
+      "under300": true,
+      "audioSeconds": 3.47,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK42",
+      "description": "Piper · speaker 14",
+      "gender": "unknown",
+      "file": "vivos-vivosspk42.wav",
+      "generationMs": [
+        143.1,
+        130.4
+      ],
+      "maxMs": 143.1,
+      "under300": true,
+      "audioSeconds": 3.94,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK43",
+      "description": "Piper · speaker 15",
+      "gender": "unknown",
+      "file": "vivos-vivosspk43.wav",
+      "generationMs": [
+        128.9,
+        130.8
+      ],
+      "maxMs": 130.8,
+      "under300": true,
+      "audioSeconds": 3.7,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK44",
+      "description": "Piper · speaker 16",
+      "gender": "unknown",
+      "file": "vivos-vivosspk44.wav",
+      "generationMs": [
+        154.9,
+        160.6
+      ],
+      "maxMs": 160.6,
+      "under300": true,
+      "audioSeconds": 3.71,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK45",
+      "description": "Piper · speaker 17",
+      "gender": "unknown",
+      "file": "vivos-vivosspk45.wav",
+      "generationMs": [
+        258.1,
+        196.6
+      ],
+      "maxMs": 258.1,
+      "under300": true,
+      "audioSeconds": 3.34,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK46",
+      "description": "Piper · speaker 18",
+      "gender": "unknown",
+      "file": "vivos-vivosspk46.wav",
+      "generationMs": [
+        136.0,
+        170.6
+      ],
+      "maxMs": 170.6,
+      "under300": true,
+      "audioSeconds": 3.58,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK38",
+      "description": "Piper · speaker 19",
+      "gender": "unknown",
+      "file": "vivos-vivosspk38.wav",
+      "generationMs": [
+        156.5,
+        226.7
+      ],
+      "maxMs": 226.7,
+      "under300": true,
+      "audioSeconds": 2.96,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK31",
+      "description": "Piper · speaker 20",
+      "gender": "unknown",
+      "file": "vivos-vivosspk31.wav",
+      "generationMs": [
+        276.7,
+        269.8
+      ],
+      "maxMs": 276.7,
+      "under300": true,
+      "audioSeconds": 3.23,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK35",
+      "description": "Piper · speaker 21",
+      "gender": "unknown",
+      "file": "vivos-vivosspk35.wav",
+      "generationMs": [
+        176.2,
+        211.4
+      ],
+      "maxMs": 211.4,
+      "under300": true,
+      "audioSeconds": 3.98,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK01",
+      "description": "Piper · speaker 22",
+      "gender": "unknown",
+      "file": "vivos-vivosspk01.wav",
+      "generationMs": [
+        186.7,
+        127.8
+      ],
+      "maxMs": 186.7,
+      "under300": true,
+      "audioSeconds": 3.44,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK02",
+      "description": "Piper · speaker 23",
+      "gender": "unknown",
+      "file": "vivos-vivosspk02.wav",
+      "generationMs": [
+        150.9,
+        138.8
+      ],
+      "maxMs": 150.9,
+      "under300": true,
+      "audioSeconds": 3.66,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK03",
+      "description": "Piper · speaker 24",
+      "gender": "unknown",
+      "file": "vivos-vivosspk03.wav",
+      "generationMs": [
+        128.7,
+        136.1
+      ],
+      "maxMs": 136.1,
+      "under300": true,
+      "audioSeconds": 3.3,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK04",
+      "description": "Piper · speaker 25",
+      "gender": "unknown",
+      "file": "vivos-vivosspk04.wav",
+      "generationMs": [
+        384.6,
+        168.7
+      ],
+      "maxMs": 384.6,
+      "under300": false,
+      "audioSeconds": 3.41,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK05",
+      "description": "Piper · speaker 26",
+      "gender": "unknown",
+      "file": "vivos-vivosspk05.wav",
+      "generationMs": [
+        134.9,
+        141.5
+      ],
+      "maxMs": 141.5,
+      "under300": true,
+      "audioSeconds": 3.58,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK06",
+      "description": "Piper · speaker 27",
+      "gender": "unknown",
+      "file": "vivos-vivosspk06.wav",
+      "generationMs": [
+        158.3,
+        159.6
+      ],
+      "maxMs": 159.6,
+      "under300": true,
+      "audioSeconds": 4.1,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK07",
+      "description": "Piper · speaker 28",
+      "gender": "unknown",
+      "file": "vivos-vivosspk07.wav",
+      "generationMs": [
+        233.5,
+        207.4
+      ],
+      "maxMs": 233.5,
+      "under300": true,
+      "audioSeconds": 3.71,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK08",
+      "description": "Piper · speaker 29",
+      "gender": "unknown",
+      "file": "vivos-vivosspk08.wav",
+      "generationMs": [
+        196.4,
+        143.5
+      ],
+      "maxMs": 196.4,
+      "under300": true,
+      "audioSeconds": 3.44,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK09",
+      "description": "Piper · speaker 30",
+      "gender": "unknown",
+      "file": "vivos-vivosspk09.wav",
+      "generationMs": [
+        155.5,
+        153.6
+      ],
+      "maxMs": 155.5,
+      "under300": true,
+      "audioSeconds": 3.42,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK10",
+      "description": "Piper · speaker 31",
+      "gender": "unknown",
+      "file": "vivos-vivosspk10.wav",
+      "generationMs": [
+        160.8,
+        162.0
+      ],
+      "maxMs": 162.0,
+      "under300": true,
+      "audioSeconds": 3.78,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK11",
+      "description": "Piper · speaker 32",
+      "gender": "unknown",
+      "file": "vivos-vivosspk11.wav",
+      "generationMs": [
+        152.9,
+        150.0
+      ],
+      "maxMs": 152.9,
+      "under300": true,
+      "audioSeconds": 3.58,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK12",
+      "description": "Piper · speaker 33",
+      "gender": "unknown",
+      "file": "vivos-vivosspk12.wav",
+      "generationMs": [
+        203.7,
+        177.4
+      ],
+      "maxMs": 203.7,
+      "under300": true,
+      "audioSeconds": 3.71,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK27",
+      "description": "Piper · speaker 34",
+      "gender": "unknown",
+      "file": "vivos-vivosspk27.wav",
+      "generationMs": [
+        172.6,
+        153.7
+      ],
+      "maxMs": 172.6,
+      "under300": true,
+      "audioSeconds": 3.58,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK36",
+      "description": "Piper · speaker 35",
+      "gender": "unknown",
+      "file": "vivos-vivosspk36.wav",
+      "generationMs": [
+        149.3,
+        132.8
+      ],
+      "maxMs": 149.3,
+      "under300": true,
+      "audioSeconds": 3.07,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK33",
+      "description": "Piper · speaker 36",
+      "gender": "unknown",
+      "file": "vivos-vivosspk33.wav",
+      "generationMs": [
+        148.8,
+        159.1
+      ],
+      "maxMs": 159.1,
+      "under300": true,
+      "audioSeconds": 3.57,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK32",
+      "description": "Piper · speaker 37",
+      "gender": "unknown",
+      "file": "vivos-vivosspk32.wav",
+      "generationMs": [
+        155.8,
+        168.7
+      ],
+      "maxMs": 168.7,
+      "under300": true,
+      "audioSeconds": 4.21,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK29",
+      "description": "Piper · speaker 38",
+      "gender": "unknown",
+      "file": "vivos-vivosspk29.wav",
+      "generationMs": [
+        151.9,
+        152.9
+      ],
+      "maxMs": 152.9,
+      "under300": true,
+      "audioSeconds": 3.7,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK39",
+      "description": "Piper · speaker 39",
+      "gender": "unknown",
+      "file": "vivos-vivosspk39.wav",
+      "generationMs": [
+        147.2,
+        132.2
+      ],
+      "maxMs": 147.2,
+      "under300": true,
+      "audioSeconds": 3.12,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK25",
+      "description": "Piper · speaker 40",
+      "gender": "unknown",
+      "file": "vivos-vivosspk25.wav",
+      "generationMs": [
+        160.2,
+        142.0
+      ],
+      "maxMs": 160.2,
+      "under300": true,
+      "audioSeconds": 4.1,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK28",
+      "description": "Piper · speaker 41",
+      "gender": "unknown",
+      "file": "vivos-vivosspk28.wav",
+      "generationMs": [
+        124.8,
+        118.0
+      ],
+      "maxMs": 124.8,
+      "under300": true,
+      "audioSeconds": 3.2,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK30",
+      "description": "Piper · speaker 42",
+      "gender": "unknown",
+      "file": "vivos-vivosspk30.wav",
+      "generationMs": [
+        139.6,
+        171.8
+      ],
+      "maxMs": 171.8,
+      "under300": true,
+      "audioSeconds": 4.29,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK37",
+      "description": "Piper · speaker 43",
+      "gender": "unknown",
+      "file": "vivos-vivosspk37.wav",
+      "generationMs": [
+        237.8,
+        152.3
+      ],
+      "maxMs": 237.8,
+      "under300": true,
+      "audioSeconds": 3.47,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK23",
+      "description": "Piper · speaker 44",
+      "gender": "unknown",
+      "file": "vivos-vivosspk23.wav",
+      "generationMs": [
+        118.6,
+        118.4
+      ],
+      "maxMs": 118.6,
+      "under300": true,
+      "audioSeconds": 3.22,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSSPK24",
+      "description": "Piper · speaker 45",
+      "gender": "unknown",
+      "file": "vivos-vivosspk24.wav",
+      "generationMs": [
+        130.5,
+        134.5
+      ],
+      "maxMs": 134.5,
+      "under300": true,
+      "audioSeconds": 3.62,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV02",
+      "description": "Piper · speaker 46",
+      "gender": "unknown",
+      "file": "vivos-vivosdev02.wav",
+      "generationMs": [
+        139.8,
+        132.6
+      ],
+      "maxMs": 139.8,
+      "under300": true,
+      "audioSeconds": 3.65,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV03",
+      "description": "Piper · speaker 47",
+      "gender": "unknown",
+      "file": "vivos-vivosdev03.wav",
+      "generationMs": [
+        112.9,
+        112.0
+      ],
+      "maxMs": 112.9,
+      "under300": true,
+      "audioSeconds": 3.14,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV01",
+      "description": "Piper · speaker 48",
+      "gender": "unknown",
+      "file": "vivos-vivosdev01.wav",
+      "generationMs": [
+        132.1,
+        120.3
+      ],
+      "maxMs": 132.1,
+      "under300": true,
+      "audioSeconds": 3.55,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV04",
+      "description": "Piper · speaker 49",
+      "gender": "unknown",
+      "file": "vivos-vivosdev04.wav",
+      "generationMs": [
+        112.9,
+        122.7
+      ],
+      "maxMs": 122.7,
+      "under300": true,
+      "audioSeconds": 3.46,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV05",
+      "description": "Piper · speaker 50",
+      "gender": "unknown",
+      "file": "vivos-vivosdev05.wav",
+      "generationMs": [
+        113.9,
+        121.0
+      ],
+      "maxMs": 121.0,
+      "under300": true,
+      "audioSeconds": 3.46,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV06",
+      "description": "Piper · speaker 51",
+      "gender": "unknown",
+      "file": "vivos-vivosdev06.wav",
+      "generationMs": [
+        138.8,
+        365.6
+      ],
+      "maxMs": 365.6,
+      "under300": false,
+      "audioSeconds": 3.68,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV07",
+      "description": "Piper · speaker 52",
+      "gender": "unknown",
+      "file": "vivos-vivosdev07.wav",
+      "generationMs": [
+        267.1,
+        132.3
+      ],
+      "maxMs": 267.1,
+      "under300": true,
+      "audioSeconds": 3.62,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV08",
+      "description": "Piper · speaker 53",
+      "gender": "unknown",
+      "file": "vivos-vivosdev08.wav",
+      "generationMs": [
+        119.9,
+        115.4
+      ],
+      "maxMs": 119.9,
+      "under300": true,
+      "audioSeconds": 3.22,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV09",
+      "description": "Piper · speaker 54",
+      "gender": "unknown",
+      "file": "vivos-vivosdev09.wav",
+      "generationMs": [
+        108.1,
+        118.9
+      ],
+      "maxMs": 118.9,
+      "under300": true,
+      "audioSeconds": 2.99,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV10",
+      "description": "Piper · speaker 55",
+      "gender": "unknown",
+      "file": "vivos-vivosdev10.wav",
+      "generationMs": [
+        158.9,
+        134.0
+      ],
+      "maxMs": 158.9,
+      "under300": true,
+      "audioSeconds": 3.68,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV11",
+      "description": "Piper · speaker 56",
+      "gender": "unknown",
+      "file": "vivos-vivosdev11.wav",
+      "generationMs": [
+        138.4,
+        138.3
+      ],
+      "maxMs": 138.4,
+      "under300": true,
+      "audioSeconds": 3.81,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV12",
+      "description": "Piper · speaker 57",
+      "gender": "unknown",
+      "file": "vivos-vivosdev12.wav",
+      "generationMs": [
+        122.9,
+        131.2
+      ],
+      "maxMs": 131.2,
+      "under300": true,
+      "audioSeconds": 3.63,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV13",
+      "description": "Piper · speaker 58",
+      "gender": "unknown",
+      "file": "vivos-vivosdev13.wav",
+      "generationMs": [
+        260.2,
+        149.5
+      ],
+      "maxMs": 260.2,
+      "under300": true,
+      "audioSeconds": 3.89,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV14",
+      "description": "Piper · speaker 59",
+      "gender": "unknown",
+      "file": "vivos-vivosdev14.wav",
+      "generationMs": [
+        138.1,
+        120.8
+      ],
+      "maxMs": 138.1,
+      "under300": true,
+      "audioSeconds": 3.39,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV15",
+      "description": "Piper · speaker 60",
+      "gender": "unknown",
+      "file": "vivos-vivosdev15.wav",
+      "generationMs": [
+        149.1,
+        138.0
+      ],
+      "maxMs": 149.1,
+      "under300": true,
+      "audioSeconds": 3.84,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV16",
+      "description": "Piper · speaker 61",
+      "gender": "unknown",
+      "file": "vivos-vivosdev16.wav",
+      "generationMs": [
+        146.1,
+        134.0
+      ],
+      "maxMs": 146.1,
+      "under300": true,
+      "audioSeconds": 3.7,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV17",
+      "description": "Piper · speaker 62",
+      "gender": "unknown",
+      "file": "vivos-vivosdev17.wav",
+      "generationMs": [
+        146.2,
+        129.7
+      ],
+      "maxMs": 146.2,
+      "under300": true,
+      "audioSeconds": 3.7,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV18",
+      "description": "Piper · speaker 63",
+      "gender": "unknown",
+      "file": "vivos-vivosdev18.wav",
+      "generationMs": [
+        117.2,
+        138.2
+      ],
+      "maxMs": 138.2,
+      "under300": true,
+      "audioSeconds": 3.54,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vivos",
+      "name": "VIVOSDEV19",
+      "description": "Piper · speaker 64",
+      "gender": "unknown",
+      "file": "vivos-vivosdev19.wav",
+      "generationMs": [
+        231.1,
+        147.1
+      ],
+      "maxMs": 231.1,
+      "under300": true,
+      "audioSeconds": 3.52,
+      "sampleRate": 16000
+    },
+    {
+      "engine": "vais1000",
+      "name": "VAIS1000",
+      "description": "Piper · speaker 0",
+      "gender": "unknown",
+      "file": "vais1000-vais1000.wav",
+      "generationMs": [
+        914.1,
+        667.2
+      ],
+      "maxMs": 914.1,
+      "under300": false,
+      "audioSeconds": 2.62,
+      "sampleRate": 22050
+    },
+    {
+      "engine": "vieneu",
+      "name": "Adam bựa",
+      "description": "Nam · Bắc · Phong cách tự nhiên",
+      "gender": "male",
+      "file": "vieneu-adam-bua.wav",
+      "generationMs": [
+        2478.5,
+        2923.8
+      ],
+      "maxMs": 2923.8,
+      "under300": false,
+      "audioSeconds": 3.76,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Trúc Ly",
+      "description": "Nữ · Bắc · Phong cách tự nhiên",
+      "gender": "female",
+      "file": "vieneu-truc-ly.wav",
+      "generationMs": [
+        2032.8,
+        1726.6
+      ],
+      "maxMs": 2032.8,
+      "under300": false,
+      "audioSeconds": 2.96,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Thiện Minh",
+      "description": "Nam · Bắc · Phong cách kể chuyện",
+      "gender": "male",
+      "file": "vieneu-thien-minh.wav",
+      "generationMs": [
+        2179.8,
+        2158.6
+      ],
+      "maxMs": 2179.8,
+      "under300": false,
+      "audioSeconds": 3.12,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Mai Anh",
+      "description": "Nữ · Bắc · Phong cách tin tức",
+      "gender": "female",
+      "file": "vieneu-mai-anh.wav",
+      "generationMs": [
+        2300.7,
+        2801.4
+      ],
+      "maxMs": 2801.4,
+      "under300": false,
+      "audioSeconds": 3.68,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Hải Đăng",
+      "description": "Nam · Bắc · Phong cách tự nhiên",
+      "gender": "male",
+      "file": "vieneu-hai-ang.wav",
+      "generationMs": [
+        1888.4,
+        1855.8
+      ],
+      "maxMs": 1888.4,
+      "under300": false,
+      "audioSeconds": 3.2,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Thùy Dung",
+      "description": "Nữ · Nam · Phong cách tin tức",
+      "gender": "female",
+      "file": "vieneu-thuy-dung.wav",
+      "generationMs": [
+        1835.5,
+        2036.4
+      ],
+      "maxMs": 2036.4,
+      "under300": false,
+      "audioSeconds": 3.04,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Thiền Tâm Đức",
+      "description": "Nam · Bắc · Phong cách kể chuyện",
+      "gender": "male",
+      "file": "vieneu-thien-tam-uc.wav",
+      "generationMs": [
+        3252.3,
+        2824.2
+      ],
+      "maxMs": 3252.3,
+      "under300": false,
+      "audioSeconds": 4.48,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Ngọc Huyền",
+      "description": "Nữ · Bắc · Giọng đọc tự nhiên",
+      "gender": "female",
+      "file": "vieneu-ngoc-huyen.wav",
+      "generationMs": [
+        2839.8,
+        2503.9
+      ],
+      "maxMs": 2839.8,
+      "under300": false,
+      "audioSeconds": 3.44,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Quang Sơn",
+      "description": "Nam · Trung · Phong cách tự nhiên",
+      "gender": "male",
+      "file": "vieneu-quang-son.wav",
+      "generationMs": [
+        2496.7,
+        2194.2
+      ],
+      "maxMs": 2496.7,
+      "under300": false,
+      "audioSeconds": 4.0,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Ngọc Trân",
+      "description": "Nữ · Trung · Phong cách tự nhiên",
+      "gender": "female",
+      "file": "vieneu-ngoc-tran.wav",
+      "generationMs": [
+        2080.9,
+        2353.0
+      ],
+      "maxMs": 2353.0,
+      "under300": false,
+      "audioSeconds": 3.84,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Minh Đức",
+      "description": "Nam · Bắc · Phong cách tin tức",
+      "gender": "male",
+      "file": "vieneu-minh-uc.wav",
+      "generationMs": [
+        2593.9,
+        2256.4
+      ],
+      "maxMs": 2593.9,
+      "under300": false,
+      "audioSeconds": 4.0,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Phạm Tuyên",
+      "description": "Nam · Bắc · Phong cách tự nhiên",
+      "gender": "male",
+      "file": "vieneu-pham-tuyen.wav",
+      "generationMs": [
+        2128.0,
+        2726.6
+      ],
+      "maxMs": 2726.6,
+      "under300": false,
+      "audioSeconds": 3.92,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Thái Sơn",
+      "description": "Nam · Nam · Phong cách kể chuyện",
+      "gender": "male",
+      "file": "vieneu-thai-son.wav",
+      "generationMs": [
+        2363.6,
+        2494.1
+      ],
+      "maxMs": 2494.1,
+      "under300": false,
+      "audioSeconds": 3.68,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Xuân Vĩnh",
+      "description": "Nam · Bắc · Phong cách tự nhiên",
+      "gender": "male",
+      "file": "vieneu-xuan-vinh.wav",
+      "generationMs": [
+        2632.2,
+        2600.9
+      ],
+      "maxMs": 2632.2,
+      "under300": false,
+      "audioSeconds": 3.36,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Thanh Bình",
+      "description": "Nam · Bắc · Phong cách kể chuyện",
+      "gender": "male",
+      "file": "vieneu-thanh-binh.wav",
+      "generationMs": [
+        2101.6,
+        2068.1
+      ],
+      "maxMs": 2101.6,
+      "under300": false,
+      "audioSeconds": 3.28,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Ngọc Linh",
+      "description": "Nữ · Bắc · Phong cách kể chuyện",
+      "gender": "female",
+      "file": "vieneu-ngoc-linh.wav",
+      "generationMs": [
+        3217.5,
+        3492.0
+      ],
+      "maxMs": 3492.0,
+      "under300": false,
+      "audioSeconds": 3.44,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Đoan Trang",
+      "description": "Nữ · Bắc · Phong cách tự nhiên",
+      "gender": "female",
+      "file": "vieneu-oan-trang.wav",
+      "generationMs": [
+        2341.8,
+        2577.5
+      ],
+      "maxMs": 2577.5,
+      "under300": false,
+      "audioSeconds": 3.68,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Thục Đoan",
+      "description": "Nữ · Nam · Phong cách kể chuyện",
+      "gender": "female",
+      "file": "vieneu-thuc-oan.wav",
+      "generationMs": [
+        2365.5,
+        2218.5
+      ],
+      "maxMs": 2365.5,
+      "under300": false,
+      "audioSeconds": 3.68,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Minh Triết",
+      "description": "Nam · Nam · Phong cách tin tức",
+      "gender": "male",
+      "file": "vieneu-minh-triet.wav",
+      "generationMs": [
+        2576.1,
+        2011.2
+      ],
+      "maxMs": 2576.1,
+      "under300": false,
+      "audioSeconds": 3.2,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Mỹ Duyên",
+      "description": "Nữ · Nam · Phong cách đọc truyện",
+      "gender": "female",
+      "file": "vieneu-my-duyen.wav",
+      "generationMs": [
+        2830.8,
+        2901.9
+      ],
+      "maxMs": 2901.9,
+      "under300": false,
+      "audioSeconds": 4.16,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Quỳnh Anh",
+      "description": "Nữ · Bắc · Phong cách đọc truyện",
+      "gender": "female",
+      "file": "vieneu-quynh-anh.wav",
+      "generationMs": [
+        2345.7,
+        2044.5
+      ],
+      "maxMs": 2345.7,
+      "under300": false,
+      "audioSeconds": 3.6,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Đức Trí",
+      "description": "Nam · Nam · Phong cách đọc truyện",
+      "gender": "male",
+      "file": "vieneu-uc-tri.wav",
+      "generationMs": [
+        3302.1,
+        2958.1
+      ],
+      "maxMs": 3302.1,
+      "under300": false,
+      "audioSeconds": 4.64,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Kim Thanh",
+      "description": "Nữ · Nam · Phong cách đọc truyện",
+      "gender": "female",
+      "file": "vieneu-kim-thanh.wav",
+      "generationMs": [
+        2596.5,
+        2890.0
+      ],
+      "maxMs": 2890.0,
+      "under300": false,
+      "audioSeconds": 4.4,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Adam",
+      "description": "Nam · Nam · Giọng đọc tự nhiên",
+      "gender": "male",
+      "file": "vieneu-adam.wav",
+      "generationMs": [
+        2074.6,
+        1768.4
+      ],
+      "maxMs": 2074.6,
+      "under300": false,
+      "audioSeconds": 3.36,
+      "sampleRate": 48000
+    },
+    {
+      "engine": "vieneu",
+      "name": "Quốc Tuấn",
+      "description": "Nam · Bắc · Phong cách tự nhiên",
+      "gender": "male",
+      "file": "vieneu-quoc-tuan.wav",
+      "generationMs": [
+        1935.8,
+        2068.2
+      ],
+      "maxMs": 2068.2,
+      "under300": false,
+      "audioSeconds": 3.44,
+      "sampleRate": 48000
+    }
+  ]
+}

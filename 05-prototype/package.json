@@ -1,0 +1,16 @@
+{
+  "name": "myvinmec-booking-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local research prototype for guided appointment booking with simulated data",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test && npm run test:e2e",
+    "test:tts": "node scripts/local-tts-smoke.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": { "@playwright/test": "^1.56.0" }
+}

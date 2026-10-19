@@ -1,0 +1,77 @@
+{
+  "text": "Cô chú muốn đặt lịch khám vào ngày nào?",
+  "loadMs": 3659.5,
+  "networkDisabled": true,
+  "voices": [
+    {
+      "voice": "hung_thinh",
+      "label": "Hưng Thịnh",
+      "file": "hung_thinh.wav",
+      "generationMs": [
+        17401.9,
+        1356.1,
+        1210.4
+      ],
+      "maxMs": 17401.9,
+      "under300": false,
+      "audioSeconds": 2.27,
+      "phonemes": "[1] kˈo ʧˈu↗ mˈuə↗n dˈaʔ↓t lˈiʔ↓c xˈaː↗m vˈaː↘w ŋˈa↘j nˈaː↘w?"
+    },
+    {
+      "voice": "manh_dung",
+      "label": "Mạnh Dũng",
+      "file": "manh_dung.wav",
+      "generationMs": [
+        23402.4,
+        13593.9,
+        1546.8
+      ],
+      "maxMs": 23402.4,
+      "under300": false,
+      "audioSeconds": 2.48,
+      "phonemes": "[1] kˈo ʧˈu↗ mˈuə↗n dˈaʔ↓t lˈiʔ↓c xˈaː↗m vˈaː↘w ŋˈa↘j nˈaː↘w?"
+    },
+    {
+      "voice": "phat_tai",
+      "label": "Phát Tài",
+      "file": "phat_tai.wav",
+      "generationMs": [
+        1281.9,
+        1124.5,
+        1057.4
+      ],
+      "maxMs": 1281.9,
+      "under300": false,
+      "audioSeconds": 2.48,
+      "phonemes": "[1] kˈo ʧˈu↗ mˈuə↗n dˈaʔ↓t lˈiʔ↓c xˈaː↗m vˈaː↘w ŋˈa↘j nˈaː↘w?"
+    },
+    {
+      "voice": "thanh_dat",
+      "label": "Thành Đạt",
+      "file": "thanh_dat.wav",
+      "generationMs": [
+        1053.2,
+        1120.5,
+        1534.2
+      ],
+      "maxMs": 1534.2,
+      "under300": false,
+      "audioSeconds": 2.52,
+      "phonemes": "[1] kˈo ʧˈu↗ mˈuə↗n dˈaʔ↓t lˈiʔ↓c xˈaː↗m vˈaː↘w ŋˈa↘j nˈaː↘w?"
+    },
+    {
+      "voice": "tuan_ngoc",
+      "label": "Tuấn Ngọc",
+      "file": "tuan_ngoc.wav",
+      "generationMs": [
+        1167.5,
+        1036.0,
+        905.4
+      ],
+      "maxMs": 1167.5,
+      "under300": false,
+      "audioSeconds": 2.42,
+      "phonemes": "[1] kˈo ʧˈu↗ mˈuə↗n dˈaʔ↓t lˈiʔ↓c xˈaː↗m vˈaː↘w ŋˈa↘j nˈaː↘w?"
+    }
+  ]
+}

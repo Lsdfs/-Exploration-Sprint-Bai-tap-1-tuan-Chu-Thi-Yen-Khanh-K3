@@ -1,0 +1,89 @@
+﻿[
+    {
+        "testedAt":  "2026-10-19T05:12:32.388Z",
+        "firstTextMs":  1410.2999999523163,
+        "firstVoiceDispatchMs":  1553,
+        "completeMs":  1795.3999999761581,
+        "text":  "Bạn bấm nút “Đặt lịch khám” để bắt đầu nhé. Tiếp theo, chọn người đi khám rồi bấm “Tiếp tục”. Sau đó, chọn nơi khám và chuyên khoa đã được giao. Cuối cùng, chọn ngày giờ phù hợp để đặt lịch.",
+        "speech":  [
+                       {
+                           "text":  "Bạn bấm nút “Đặt lịch khám” để bắt đầu nhé.",
+                           "ms":  1553
+                       },
+                       {
+                           "text":  " Tiếp theo, chọn người đi khám rồi bấm “Tiếp tục”.",
+                           "ms":  1578.3999999761581
+                       },
+                       {
+                           "text":  " Sau đó, chọn nơi khám và chuyên khoa đã được giao.",
+                           "ms":  1693.5
+                       },
+                       {
+                           "text":  " Cuối cùng, chọn ngày giờ phù hợp để đặt lịch.",
+                           "ms":  1722.199999988079
+                       }
+                   ],
+        "fallback":  false,
+        "speechBackend":  "Browser speechSynthesis dispatch instrumented; actual audio not measured",
+        "model":  "gpt-4.1-mini",
+        "pass":  true
+    },
+    {
+        "testedAt":  "2026-10-19T05:12:36.451Z",
+        "firstTextMs":  1079.4000000357628,
+        "firstVoiceDispatchMs":  1239.4000000357628,
+        "completeMs":  1626.800000011921,
+        "text":  "Cô/chú bấm nút “Đặt lịch khám” để bắt đầu nhé. Tiếp theo, chọn người sẽ đi khám, ví dụ “Bác An” hoặc “Bác Bình”. Sau đó chọn cơ sở y tế mong muốn và chuyên khoa tương ứng. Cuối cùng, chọn ngày giờ phù hợp để đặt lịch.",
+        "speech":  [
+                       {
+                           "text":  "Cô/chú bấm nút “Đặt lịch khám” để bắt đầu nhé.",
+                           "ms":  1239.4000000357628
+                       },
+                       {
+                           "text":  " Tiếp theo, chọn người sẽ đi khám, ví dụ “Bác An” hoặc “Bác Bình”.",
+                           "ms":  1354.9000000357628
+                       },
+                       {
+                           "text":  " Sau đó chọn cơ sở y tế mong muốn và chuyên khoa tương ứng.",
+                           "ms":  1389.9000000357628
+                       },
+                       {
+                           "text":  " Cuối cùng, chọn ngày giờ phù hợp để đặt lịch.",
+                           "ms":  1543.9000000357628
+                       }
+                   ],
+        "fallback":  false,
+        "speechBackend":  "Browser speechSynthesis dispatch instrumented; actual audio not measured",
+        "model":  "gpt-4.1-mini",
+        "pass":  true
+    },
+    {
+        "testedAt":  "2026-10-19T05:12:39.919Z",
+        "firstTextMs":  764.5,
+        "firstVoiceDispatchMs":  917.7000000476837,
+        "completeMs":  1228.1000000238419,
+        "text":  "Cô/chú bấm nút “Đặt lịch khám” trên màn hình. Sau đó, chọn người đi khám là mình hay người thân rồi bấm “Tiếp tục”. Chọn cơ sở y tế mong muốn, tiếp tục bấm “Tiếp tục”. Tiếp theo, chọn chuyên khoa và ngày giờ, rồi kiểm tra lại thông tin trước khi gửi yêu cầu.",
+        "speech":  [
+                       {
+                           "text":  "Cô/chú bấm nút “Đặt lịch khám” trên màn hình.",
+                           "ms":  917.7000000476837
+                       },
+                       {
+                           "text":  " Sau đó, chọn người đi khám là mình hay người thân rồi bấm “Tiếp tục”.",
+                           "ms":  1057.2000000476837
+                       },
+                       {
+                           "text":  " Chọn cơ sở y tế mong muốn, tiếp tục bấm “Tiếp tục”.",
+                           "ms":  1082.2000000476837
+                       },
+                       {
+                           "text":  " Tiếp theo, chọn chuyên khoa và ngày giờ, rồi kiểm tra lại thông tin trước khi gửi yêu cầu.",
+                           "ms":  1219
+                       }
+                   ],
+        "fallback":  false,
+        "speechBackend":  "Browser speechSynthesis dispatch instrumented; actual audio not measured",
+        "model":  "gpt-4.1-mini",
+        "pass":  true
+    }
+]

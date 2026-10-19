@@ -1,3 +1,22 @@
+# Submission scope: assignment deliverables and their reproducible sources only.
+/*
+!/.gitignore
+!/README.md
+!/01-phong-van/
+!/02-journey-map/
+!/03-need-statement/
+!/04-best-practice/
+!/05-prototype/
+!/06-rui-ro-dao-duc/
+!/07-coach-plan/
+!/slides.pdf
+!/slides.html
+!/slides-outline.md
+!/docs/
+/docs/*
+!/docs/Bài tập ứng tuyển tham gia Exploration Sprint 6 tuần tại Vinmec.docx
+!/docs/export-slides.mjs
+
 # Local secrets and generated caches
 .env
 .env.*
@@ -6,8 +25,23 @@ __pycache__/
 *.py[cod]
 .venv/
 node_modules/
+/05-prototype/playwright-report/
+/05-prototype/test-results/
 .DS_Store
 Thumbs.db
+*.log
+
+# Downloaded speech models; keep source, licenses and download instructions.
+/05-prototype/tts/models/**/*.onnx
+
+# Download-session pages and helpers are not prototype evidence.
+/05-prototype/references/*drive-folder.html
+/05-prototype/references/mia/drive-folder.html
+/05-prototype/references/mia/download.py
+/05-prototype/references/additional/download.config
 
 # Local brainstorming notes
 /brainstorm/
+
+# Private interview audio and transcription workspace
+/.local-transcription/

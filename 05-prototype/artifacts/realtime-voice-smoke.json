@@ -1,0 +1,93 @@
+{
+  "testedAt": "2026-10-19T15:03:01.248Z",
+  "upstream": [
+    {
+      "status": 201,
+      "endpoint": "/v1/realtime/calls"
+    }
+  ],
+  "errors": [],
+  "diagnostics": {
+    "states": [
+      "ice:checking",
+      "connecting",
+      "ice:connected",
+      "connected",
+      "channel:open"
+    ],
+    "events": [
+      {
+        "type": "session.created"
+      },
+      {
+        "type": "session.updated"
+      },
+      {
+        "type": "input_audio_buffer.speech_started"
+      },
+      {
+        "type": "input_audio_buffer.speech_stopped"
+      },
+      {
+        "type": "input_audio_buffer.committed"
+      },
+      {
+        "type": "conversation.item.added"
+      },
+      {
+        "type": "conversation.item.done"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.delta"
+      },
+      {
+        "type": "conversation.item.input_audio_transcription.completed"
+      }
+    ]
+  },
+  "transcript": "Xin chào công chúa, mình là Mi trợ lý của bạn.",
+  "status": "Âm thanh được gửi tới OpenAI. Ví dụ: “Tôi muốn đặt lịch khám”. Mia sẽ trả lời khi cô/chú nói xong.",
+  "pass": true
+}

@@ -1,0 +1,88 @@
+{
+  "text": "Xin chào cô chú. Mia có thể giúp cô chú đặt lịch khám.",
+  "engine": "piper",
+  "model": "vi_VN-vivos-x_low",
+  "methodology": "Five uncached full-WAV generations per speaker after model warmup; excludes model load, chat and network. Pitch is a rough estimate from the earlier sample.",
+  "voices": [
+    {
+      "name": "VIVOSDEV12",
+      "speakerId": 57,
+      "file": "vivosdev12.wav",
+      "generationMs": [
+        175.5,
+        178.9,
+        168.4,
+        169.3,
+        160.5
+      ],
+      "minMs": 160.5,
+      "maxMs": 178.9,
+      "estimatedPitchHz": 109.6,
+      "under300": true
+    },
+    {
+      "name": "VIVOSSPK24",
+      "speakerId": 45,
+      "file": "vivosspk24.wav",
+      "generationMs": [
+        170.0,
+        179.7,
+        230.4,
+        198.4,
+        262.5
+      ],
+      "minMs": 170.0,
+      "maxMs": 262.5,
+      "estimatedPitchHz": 131.1,
+      "under300": true
+    },
+    {
+      "name": "VIVOSDEV11",
+      "speakerId": 56,
+      "file": "vivosdev11.wav",
+      "generationMs": [
+        192.2,
+        176.2,
+        177.8,
+        195.4,
+        231.0
+      ],
+      "minMs": 176.2,
+      "maxMs": 231.0,
+      "estimatedPitchHz": 133.3,
+      "under300": true
+    },
+    {
+      "name": "VIVOSDEV09",
+      "speakerId": 54,
+      "file": "vivosdev09.wav",
+      "generationMs": [
+        162.0,
+        142.8,
+        152.5,
+        142.8,
+        146.7
+      ],
+      "minMs": 142.8,
+      "maxMs": 162.0,
+      "estimatedPitchHz": 136.8,
+      "under300": true
+    },
+    {
+      "name": "VIVOSDEV10",
+      "speakerId": 55,
+      "file": "vivosdev10.wav",
+      "generationMs": [
+        176.7,
+        168.2,
+        290.7,
+        195.9,
+        177.1
+      ],
+      "minMs": 168.2,
+      "maxMs": 290.7,
+      "estimatedPitchHz": 137.9,
+      "under300": true
+    }
+  ]
+}
