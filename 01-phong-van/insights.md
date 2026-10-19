@@ -1,4 +1,4 @@
-﻿# Tổng hợp bằng chứng P1, P2 và P3
+# Tổng hợp bằng chứng P1, P2 và P3
 
 Cập nhật 19/10/2026. AI hỗ trợ tổng hợp từ ghi chép do người phỏng vấn cung cấp. Có ba trường hợp khám phá: P1/P2 thuộc nhóm 70–85 tuổi; P3 thuộc nhóm 50–60 tuổi. Không đại diện cho toàn bộ người cao tuổi.
 
@@ -51,8 +51,6 @@ Chọn **đăng ký/đặt lịch trước khi đến viện**, dựa trên I02�
 - P1/P2 đã từng thử đặt lịch trước chưa, dùng thiết bị nào, ai hỗ trợ và vì sao chưa dùng kênh khác: hỏi sự kiện cụ thể, không tự điền.
 - Các khoảng 2 tiếng ở khám và ra về có chồng nhau không: cần xác nhận lại; không tính tổng ngày khám.
 - Đã có thời gian tác vụ và một lần gõ hơn 1 phút ở P3; chưa có baseline được kiểm soát cho Mia hoặc tốc độ gõ chuẩn. Không có cảm xúc nguyên văn theo từng bước.
-- Chưa có log thử prototype với người thật. Phỏng vấn này không thay thế thử 2–3 người ở mục 05.
 - [Ghi chép tự dùng MyVinmec](myvinmec-notes.md) đã được bổ sung: người làm bài thao tác thuận lợi ở cả hai luồng, không ghi nhận điểm nghẽn. Đây là trường hợp đối chiếu với P3; không suy rộng khó khăn P3 cho mọi người dùng. Không có số đo tự dùng riêng hoặc kết quả thử voiceover.
 
-Nguồn phương pháp: [docs tổng hợp](../docs/tong-hop-kien-thuc-can-nho.md), mục 4–5 và 13. AI chỉ hỗ trợ tổ chức bằng chứng, không tạo lời người tham gia.
-
+Nguồn phương pháp: tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), mục 4–5 và 13. AI chỉ hỗ trợ tổ chức bằng chứng, không tạo lời người tham gia.

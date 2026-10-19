@@ -38,5 +38,3 @@ Chọn đăng ký/đặt lịch trước khi đến viện để kiểm chứng 
 4. Sửa lựa chọn hoặc quay lại; nghe/đọc tóm tắt đầy đủ.
 5. Xác nhận rõ sau tóm tắt; ứng dụng kiểm tra trước khi tạo yêu cầu mô phỏng.
 6. Xem lại trạng thái **Chờ xác nhận · Mô phỏng**; không hiểu nhầm thành lịch thật đã được bệnh viện xác nhận.
-
-Đây là thiết kế cần thử, không phải hành vi P1/P2/P3 đã thực hiện trên Mia. Kiểm chứng kỹ thuật xem [mục 05](../05-prototype/verification.md); thử người thật xem [kế hoạch/log](../05-prototype/user-test-log.md). Không tự gán cảm xúc hoặc khả năng thao tác từ tuổi.

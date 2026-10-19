@@ -33,4 +33,4 @@ Không thử agent voice trong mục này. Không suy ra agent rút ngắn hàng
 
 P3 thuộc nhóm 50–60 tuổi, khá quen điện thoại, đã đồng ý tham gia và ghi âm. Buổi này gồm lời kể ngày khám, sử dụng AI có sẵn trên MyVinmec và đặt lịch thông thường trên cùng app. Tách từng loại nguồn; ghi rõ trợ giúp tìm nút AI, trường bắt buộc, trạng thái lựa chọn, danh sách, nhập chữ và điểm dừng. Kết quả khoảng 6 phút ở AI và 11 phút ở luồng thường không phải thử tính năng voiceover bổ sung. Khi hỏi nhận xét, không gợi rằng AI hoặc giọng đọc chắc chắn tốt hơn; giữ nguyên giới hạn mốc đo trong hồ sơ P3.
 
-Nguồn phương pháp: [docs tổng hợp](../docs/tong-hop-kien-thuc-can-nho.md), mục 4 và 13.4. Khám phá cả ngày để tìm điểm đau; sau tổng hợp mới chọn một khoảnh khắc hẹp cho bài tập.
+Nguồn phương pháp: tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), mục 4 và 13.4. Khám phá cả ngày để tìm điểm đau; sau tổng hợp mới chọn một khoảnh khắc hẹp cho bài tập.

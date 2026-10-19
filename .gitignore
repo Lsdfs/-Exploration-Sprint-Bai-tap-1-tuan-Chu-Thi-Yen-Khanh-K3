@@ -1,4 +1,4 @@
-# Submission scope: assignment deliverables and their reproducible sources only.
+# Submission scope: only the assignment documents and runnable prototype.
 /*
 !/.gitignore
 !/README.md
@@ -10,12 +10,6 @@
 !/06-rui-ro-dao-duc/
 !/07-coach-plan/
 !/slides.pdf
-!/slides.html
-!/slides-outline.md
-!/docs/
-/docs/*
-!/docs/Bài tập ứng tuyển tham gia Exploration Sprint 6 tuần tại Vinmec.docx
-!/docs/export-slides.mjs
 
 # Local secrets and generated caches
 .env
@@ -45,3 +39,21 @@ Thumbs.db
 
 # Private interview audio and transcription workspace
 /.local-transcription/
+
+# Development evidence and experiments stay on this machine.
+/05-prototype/artifacts/
+/05-prototype/references/
+/05-prototype/scripts/
+/05-prototype/tests/
+/05-prototype/playwright.config.mjs
+/05-prototype/verification.md
+/05-prototype/mock-data/
+
+# Keep only the code and setup needed by the current local voice.
+/05-prototype/tts/*
+!/05-prototype/tts/README.md
+!/05-prototype/tts/worker.py
+!/05-prototype/tts/vieneu_voice.py
+!/05-prototype/tts/download_vieneu.py
+!/05-prototype/tts/requirements-lock.txt
+!/05-prototype/tts/vieneu-sources.json

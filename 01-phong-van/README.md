@@ -1,4 +1,4 @@
-﻿# Phỏng vấn và khám phá — Trải nghiệm một ngày đi khám
+# Phỏng vấn và khám phá — Trải nghiệm một ngày đi khám
 
 Mục 01 tìm hiểu **một ngày đi khám diễn ra thế nào, chờ ở đâu/mất bao lâu, ai cần nhập liệu/đánh máy và bị mắc ở bước nào**. Quan sát cả ngày giúp nhận diện điểm đau, sau đó mới hội tụ một khoảnh khắc để thiết kế. Định hướng sản phẩm hiện tại vẫn là agent voice hỗ trợ người cao tuổi; không ép mọi lời kể thành bằng chứng cần agent.
 
@@ -14,9 +14,9 @@ P1 và P2 được phỏng vấn ngày **18/10/2026**. Cả hai đồng ý tham 
 
 Ký hiệu `[Bạn bổ sung: …]` dành cho phần chưa có trong nguồn được đối chiếu; không có nghĩa câu đó chưa được hỏi. Số phút nhớ lại là ước lượng. Chỉ dùng quote có căn cứ; phần ngoài ghi âm ghi dạng tóm tắt và nguồn bổ sung.
 
-**Đã có ba hồ sơ phỏng vấn P1/P2/P3.** P3 đã dùng AI có sẵn bằng chữ/biểu mẫu và luồng thường trên MyVinmec; tính năng voiceover bổ sung chưa có kết quả thử người dùng. Bài tập yêu cầu ít nhất 3 phỏng vấn dịch vụ ẩn danh theo đề bài trong [docs](../docs/), mục 6.
+**Đã có ba hồ sơ phỏng vấn P1/P2/P3.** P3 đã dùng AI có sẵn bằng chữ/biểu mẫu và luồng thường trên MyVinmec; tính năng voiceover bổ sung chưa có kết quả thử người dùng. Bài tập yêu cầu ít nhất 3 phỏng vấn dịch vụ ẩn danh theo đề bài trong tài liệu đề bài Exploration Sprint (lưu cục bộ), mục 6.
 
-AI hỗ trợ biên soạn và tổ chức nội dung; đã thử nhận dạng nhưng không dùng kết quả thiếu tin cậy làm bằng chứng. Không tạo câu trả lời hoặc số đo thay người tham gia. Không công khai tên, bệnh án, tình trạng sức khỏe, tài khoản, OTP; chỉ giữ quá trình dịch vụ. Phương pháp: [docs tổng hợp](../docs/tong-hop-kien-thuc-can-nho.md), mục 4 và 13.
+AI hỗ trợ biên soạn và tổ chức nội dung; đã thử nhận dạng nhưng không dùng kết quả thiếu tin cậy làm bằng chứng. Không tạo câu trả lời hoặc số đo thay người tham gia. Không công khai tên, bệnh án, tình trạng sức khỏe, tài khoản, OTP; chỉ giữ quá trình dịch vụ. Phương pháp: tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), mục 4 và 13.
 
 ## Thông tin người phỏng vấn đã bổ sung
 
@@ -35,4 +35,3 @@ Ngày 17/10/2026: luồng AI có sẵn khoảng 6 phút, đặt lịch thành c�
 ## Trải nghiệm tự dùng của người làm bài
 
 [Ghi chép tự dùng MyVinmec](myvinmec-notes.md) ghi nhận cả luồng AI có sẵn và luồng thường đều thuận lợi, không có điểm nghẽn. Kết quả này được giữ riêng với khó khăn quan sát ở P3; không gán thời gian 6/11 phút của P3 cho người làm bài và không coi là thử tính năng voiceover bổ sung.
-

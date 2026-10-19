@@ -1,6 +1,6 @@
 # Ba best practice quốc tế — Agent voice cho người cao tuổi
 
-AI hỗ trợ đọc nguồn và biên soạn, đối chiếu ngày **19/10/2026**. Đây là thực hành tham khảo, chưa chứng minh hiệu quả tương tự với người cao tuổi Việt Nam hoặc Mia. Cơ sở phương pháp: [docs tổng hợp](../docs/tong-hop-kien-thuc-can-nho.md), D2 về PAIR/quyền kiểm soát, P18 về thử nhiều cơ chế; bổ sung nguồn chính thức theo đề bài mục 6.3.
+AI hỗ trợ đọc nguồn và biên soạn, đối chiếu ngày **19/10/2026**. Đây là thực hành tham khảo, chưa chứng minh hiệu quả tương tự với người cao tuổi Việt Nam hoặc Mia. Cơ sở phương pháp: tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), D2 về PAIR/quyền kiểm soát, P18 về thử nhiều cơ chế; bổ sung nguồn chính thức theo đề bài mục 6.3.
 
 | Nguồn quốc tế | Thực hành được nguồn mô tả | Bài học đề xuất cho Mia | Giới hạn / kiểm chứng |
 | --- | --- | --- | --- |

@@ -6,7 +6,7 @@
 
 | Phiên bản / ngày | Bằng chứng từ thử nghiệm | Thay đổi | Lý do | Kết quả kiểm tra lại |
 | --- | --- | --- | --- | --- |
-| v0.1 / 18-10-2026 | Yêu cầu chuyển hướng chính; tham chiếu Google Play, chưa phải phản hồi người tham gia | Dựng đặt lịch, sửa, xem trạng thái, trợ lý thao tác và log | Có bản click được để thử giả thuyết | Xem verification.md |
+| v0.1 / 18-10-2026 | Yêu cầu chuyển hướng chính; tham chiếu Google Play, chưa phải phản hồi người tham gia | Dựng đặt lịch, sửa, xem trạng thái, trợ lý thao tác và log | Có bản click được để thử giả thuyết | Báo cáo kỹ thuật lưu cục bộ ngoài bản nộp |
 | v0.1 / 18-10-2026 | Test phân loại câu hỏi | Phân biệt “xem lịch đã đặt” với “đã đặt chưa” trong mock | Tránh nhầm điều hướng và trạng thái | Unit test cả hai ý |
 | v0.1 / 18-10-2026 | Quan sát ảnh viewport điện thoại | Đổi trợ lý sang bảng mở/thu cuối màn hình | Tránh phải tìm trợ lý bằng cách cuộn dài | Kiểm tra lại desktop và mobile |
 | v0.2 / 18-10-2026 | Người làm bài yêu cầu thao tác bằng giọng nói | Thêm micro, đồng ý nhận dạng, xem/sửa câu nói và xác nhận mở đặt lịch/xem lịch; dự phòng nhập chữ | Người dùng có thêm cách diễn đạt yêu cầu; chưa nhập toàn bộ lịch bằng giọng nói | 21 test logic/API và 42 lượt E2E qua; sự kiện giọng nói giả lập, chưa thử micro thật |
@@ -21,7 +21,7 @@ Tích hợp hội thoại và micro ngay trong trang Mia, giữ bốn thẻ ch�
 
 ## QA mở rộng và lỗi hồi quy — 19/10/2026
 
-Theo yêu cầu kiểm thử như người mới dùng, bổ sung kịch bản câu phủ định xác nhận, hỏi ý nghĩa xác nhận, câu trả lời ngắn, đổi ý, ngày/giờ sai, giờ hết chỗ theo ngày đã chọn, đổi cơ sở, đóng bảng chọn, lưu trữ bị lỗi, gửi lặp, timeout/stream lỗi và kiểm tra các nút dịch vụ. Đã sửa các lỗi tái hiện; chi tiết và bằng chứng trong [báo cáo QA](artifacts/qa-mia-2026-10-19.md). Đã gọi 5 yêu cầu OpenAI thật thành công bằng cấu hình hiện tại; không tạo lịch thật.
+Theo yêu cầu kiểm thử như người mới dùng, bổ sung kịch bản câu phủ định xác nhận, hỏi ý nghĩa xác nhận, câu trả lời ngắn, đổi ý, ngày/giờ sai, giờ hết chỗ theo ngày đã chọn, đổi cơ sở, đóng bảng chọn, lưu trữ bị lỗi, gửi lặp, timeout/stream lỗi và kiểm tra các nút dịch vụ. Đã sửa các lỗi tái hiện; chi tiết và bằng chứng trong báo cáo QA lưu cục bộ ngoài bản nộp. Đã gọi 5 yêu cầu OpenAI thật thành công bằng cấu hình hiện tại; không tạo lịch thật.
 
 ## Streaming chữ và voice — 19/10/2026
 
@@ -31,7 +31,7 @@ Theo yêu cầu kiểm thử như người mới dùng, bổ sung kịch bản c
 
 ## TTS lưu sẵn trên máy — 19/10/2026
 
-Theo yêu cầu TTS cục bộ, thay giọng trình duyệt bằng worker Piper nạp model tiếng Việt có sẵn trong repo trên đĩa. Thêm endpoint WAV, warmup khi khởi động, cache RAM giới hạn và trình phát theo câu có dừng/hủy. Đã tạo audio mẫu thật và kiểm tra playback trên Edge với mọi request ngoài localhost bị chặn. Xem tts/README.md và verification.md.
+Theo yêu cầu TTS cục bộ, thay giọng trình duyệt bằng worker Piper nạp model tiếng Việt có sẵn trong repo trên đĩa. Thêm endpoint WAV, warmup khi khởi động, cache RAM giới hạn và trình phát theo câu có dừng/hủy. Đã tạo audio mẫu thật và kiểm tra playback trên Edge với mọi request ngoài localhost bị chặn. Xem tts/README.md; báo cáo kỹ thuật lưu cục bộ ngoài bản nộp.
 
 ## Kiểm tra kỹ thuật theo tình huống — 19/10/2026
 

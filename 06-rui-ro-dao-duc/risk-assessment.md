@@ -1,6 +1,6 @@
 # Rủi ro và đạo đức — Agent voice cho người cao tuổi
 
-**Đánh giá thiết kế dự kiến, chưa phải chứng nhận/kết quả kiểm thử.** AI hỗ trợ theo [docs tổng hợp](../docs/tong-hop-kien-thuc-can-nho.md), mục 7, 9–10, 13.4. Phạm vi đặt lịch mô phỏng, không tư vấn y khoa hoặc dùng hồ sơ thật.
+**Đánh giá thiết kế dự kiến, chưa phải chứng nhận/kết quả kiểm thử.** AI hỗ trợ theo tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), mục 7, 9–10, 13.4. Phạm vi đặt lịch mô phỏng, không tư vấn y khoa hoặc dùng hồ sơ thật.
 
 | Rủi ro / tình huống | Tác động | Giảm thiểu đề xuất | Cách kiểm tra | Rủi ro còn lại |
 | --- | --- | --- | --- | --- |

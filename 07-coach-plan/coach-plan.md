@@ -1,4 +1,4 @@
-﻿# Mình sẽ coach một nhóm làm bài này thế nào
+# Mình sẽ coach một nhóm làm bài này thế nào
 
 Tôi đồng hành cùng 5–10 bạn K4, chia nhóm khoảng 2 người, luân phiên vai phỏng vấn/ghi chép và làm/rà soát. Mỗi việc có người phụ trách, người kiểm tra và hạn hoàn thành. Mục tiêu là chọn đúng vấn đề, thử có bằng chứng và giữ an toàn dữ liệu.
 
@@ -26,4 +26,4 @@ Mỗi vòng sprint thử với **3–5 người dùng Vinmec**, báo cáo: phả
 
 Tôi ghi **đạt/cần bổ sung**, lý do, người xử lý và hạn rà lại; nhắc báo cáo trễ, thu hẹp phạm vi khi cần. Chỉ dùng dữ liệu mô phỏng, công khai hoặc khử định danh trong sandbox được duyệt; không dùng dữ liệu thật của người bệnh. Các cổng quyết định theo thẩm quyền trong đề, coach chuẩn bị bằng chứng và khuyến nghị.
 
-Nguồn: đề Exploration Sprint trong [docs](../docs/), mục 2, 4, 6.3. Cách điều phối là đề xuất của người thực hiện; AI hỗ trợ biên tập.
+Nguồn: đề Exploration Sprint trong tài liệu đề bài Exploration Sprint (lưu cục bộ), mục 2, 4, 6.3. Cách điều phối là đề xuất của người thực hiện; AI hỗ trợ biên tập.

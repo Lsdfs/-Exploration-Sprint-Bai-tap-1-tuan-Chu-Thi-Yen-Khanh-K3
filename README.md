@@ -17,7 +17,7 @@
 5. [Prototype AI và thử nghiệm](05-prototype/README.md)
 6. [Rủi ro và đạo đức](06-rui-ro-dao-duc/risk-assessment.md)
 7. [Kế hoạch coach](07-coach-plan/coach-plan.md)
-8. [Slide trình bày — PDF 10 trang](slides.pdf) · [Bản nguồn HTML](slides.html) · [Dàn ý và cách xuất lại](slides-outline.md).
+8. [Slide trình bày — PDF 10 trang](slides.pdf).
 
 ## Theo dõi sản phẩm nộp
 
