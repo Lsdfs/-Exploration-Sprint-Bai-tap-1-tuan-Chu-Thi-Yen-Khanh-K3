@@ -26,3 +26,11 @@ Giọng đọc và cache chỉ ở bộ nhớ khi vận hành; dừng đọc h�
 - [VieNeu SDK](https://docs.vieneu.io/vi/docs/sdk/standard-mode/).
 
 Giữ attribution và giấy phép của model/SDK khi phân phối các tài nguyên tải về. Repo này chỉ chứa mã tích hợp, hướng dẫn và manifest nguồn.
+# Cấu hình đang dùng: Kokoro tiếng Việt / Thành Đạt
+
+App dùng `.kokoro-venv` và model gốc `models/kokoro-vi/kokoro_vi.onnx`, 8 luồng CPU. Worker nạp và làm nóng một lần; không tải model khi chạy. Không dùng bản INT8 thử nghiệm để giữ chất giọng đã được nghe duyệt.
+
+Đo ngày 2026-10-19 với câu “Cô chú muốn đặt lịch khám vào ngày nào?”: năm lượt tạo đủ WAV sau warmup, không cache: 1010,3 / 1087,9 / 1250,5 / 1538,8 / 1330,0 ms. Kiểm tra qua worker Node thực tế: 995 ms, WAV mono 24 kHz, một chunk đầy đủ. Đây là thời gian TTS, không gồm STT/chat; không bảo đảm mọi câu đều dưới một giây. Câu dài và tải CPU làm tăng thời gian. Kokoro hiện tạo cả câu rồi mới gửi âm thanh.
+
+Chạy app: `npm start`. Các ghi chú VieNeu/Piper bên dưới là cấu hình cũ.
+

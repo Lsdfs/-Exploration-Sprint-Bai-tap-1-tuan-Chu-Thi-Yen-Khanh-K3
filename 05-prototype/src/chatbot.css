@@ -91,3 +91,12 @@
 .mia-fullscreen .mia-dialog .mia-review>div{padding:10px 0;gap:8px}
 .mia-fullscreen .mia-character{width:78px;height:95px;object-fit:contain;mix-blend-mode:multiply}
 .mia-health-banner{display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#eaf7f5;padding:14px;border-radius:14px;margin-bottom:18px}.mia-health-banner strong{font-size:17px}.mia-health-banner span{font-size:13px;width:100%;color:#57716d}.mia-health-banner button{border:1px solid #a9cfca;background:white;color:#257d75;padding:8px 12px;border-radius:8px;min-height:40px}.guide-message>p{white-space:pre-wrap}
+.chat-composer .mia-activity{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:12px;margin:0 0 12px;padding:14px;border:1px solid #86beb6;border-left:4px solid #21877d;border-radius:12px;background:#eef8f6;color:#184e48}
+.mia-activity-copy strong{display:block;font-size:17px;line-height:1.4}.mia-activity-copy p{font-size:14px;line-height:1.45;margin:4px 0}.mia-activity-time{display:block;min-height:17px;font-size:12px;font-variant-numeric:tabular-nums;color:#466861}
+.mia-progress-icon{display:block;width:26px;height:26px;border:3px solid #b8dad4;border-top-color:#176e63;border-radius:50%;animation:mia-progress-spin .8s linear infinite}
+.mia-activity[data-phase="listening"] .mia-progress-icon{border:3px solid #21877d;background:#55bca8;animation:mic-pulse 1.2s ease-in-out infinite}
+.chat-composer .mia-activity button{min-height:44px;margin:0;padding:8px 12px;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;border:1px solid #8cb7af;background:#fff;color:#205d53;border-radius:9px}
+.mia-activity-actions{display:flex;gap:8px;flex-wrap:wrap}.chat-composer .mia-activity .mia-finish-speaking{background:#176e63;color:white;border-color:#176e63}
+@keyframes mia-progress-spin{to{transform:rotate(360deg)}}
+@media(max-width:500px){.chat-composer .mia-activity{grid-template-columns:24px minmax(0,1fr);gap:10px;padding:12px}.mia-activity-copy strong{font-size:16px}.mia-activity-actions{grid-column:2;justify-self:start}.mia-progress-icon{width:24px;height:24px}}
+@media(prefers-reduced-motion:reduce){.mia-progress-icon,.mia-activity[data-phase="listening"] .mia-progress-icon{animation:none}}

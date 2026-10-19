@@ -2,7 +2,8 @@ import {createLocalSpeech} from './local-speech.mjs';
 import { sentenceChunks, createSentenceBuffer } from './reply-stream.mjs';
 import { normalize, PROFILES, SERVICES, LOCATIONS, TIMES, GUIDES, newDraft, summary } from './domain.mjs';
 import { classifyRequest, extractBookingSlots, nextQuestion, validateChatBooking, doctorsFor, DOCTORS, bookingHelp } from './chatbot-domain.mjs';
-import { mountVoice, mountSimulatedVoice, stopVoice } from './voice.mjs';
+import { mountVoice, mountSimulatedVoice, stopVoice, finishVoice } from './voice.mjs';
+import {createActivityIndicator} from './activity.mjs';
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const robot = (small = false) => `<img class="robot-avatar mia-avatar ${small ? 'robot-small' : ''}" src="/assets/mia.png" alt="Mia, trợ lý sức khỏe MyVinmec" width="156" height="156">`;
 const greeting = 'Xin chào! Mình là Mia. Bạn cần mình giúp gì hôm nay?';
@@ -28,6 +29,11 @@ const prompts = { profile:'Bạn đặt lịch cho bản thân hay người thâ
 
 export function createChatbot(hooks) {
   const model = { messages:[], active:false, draft:newDraft(), question:'', edit:'', tour:null, voiceMode:'native', autoRead:true, status:'waiting', submitted:false, note:'', version:0 };
+  const activity=createActivityIndicator({onFinish:finishVoice,onCancel(phase){
+    if(['thinking','answering'].includes(phase))hooks.cancelHelp();
+    else document.querySelector('.voice-button')?.click();
+  }});
+  const updateActivity=()=>activity.update(hooks.state.helpBusy?(hooks.state.helpStreaming?'answering':'thinking'):(['connecting','listening','transcribing'].includes(model.status)?model.status:''));
   try {
     const draft = JSON.parse(sessionStorage.getItem('mia-draft') || 'null');
     if (draft && typeof draft === 'object') {
@@ -97,7 +103,8 @@ export function createChatbot(hooks) {
   function setStatus(value) {
     model.status = value;
     const panel = document.querySelector('.chatbot-panel'); if (panel) panel.dataset.status = value;
-    const label = document.querySelector('.robot-state'); if (label) label.textContent = ({waiting:'Đang chờ bạn',listening:'Đang nghe…',processing:'Đang xử lý…',answering:'Đang trả lời'})[value] || 'Đang chờ bạn';
+    const label = document.querySelector('.robot-state'); if (label) label.textContent = ({waiting:'Đang chờ bạn',connecting:'Đang mở micro…',listening:'Đang nghe…',transcribing:'Đang nhận lời nói…',processing:'Đang xử lý…',answering:'Đang trả lời'})[value] || 'Đang chờ bạn';
+    updateActivity();
   }
   function reply(text) { model.messages.push({ role:'assistant', text }); model.messages = model.messages.slice(-14); setStatus('answering'); speak(text); }
   function user(text) { model.messages.push({ role:'user', text }); model.messages = model.messages.slice(-14); }
@@ -259,6 +266,7 @@ export function createChatbot(hooks) {
     } else { redraw(); await hooks.ask(text); }
   }
   function mount() {
+    updateActivity();
     mountReadingControl();
     tourResize?.disconnect();
     const bubble = document.querySelector('.coach-bubble');

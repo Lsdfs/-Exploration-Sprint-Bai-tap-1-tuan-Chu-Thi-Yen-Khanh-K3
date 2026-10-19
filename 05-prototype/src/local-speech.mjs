@@ -33,7 +33,7 @@ export function createLocalSpeech({onError=()=>{}}={}){
  return {
   enqueue(text){
    const version=generation,controller=new AbortController();requests.add(controller);
-   const prepared=fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,stream:typeof AudioContext!=='undefined'}),signal:controller.signal})
+   const prepared=fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,stream:false}),signal:controller.signal})
     .then(response=>{if(!response.ok)throw new Error('Local TTS unavailable');return response;});
    prepared.catch(()=>{});
    const playing=tail.catch(()=>{}).then(async()=>{

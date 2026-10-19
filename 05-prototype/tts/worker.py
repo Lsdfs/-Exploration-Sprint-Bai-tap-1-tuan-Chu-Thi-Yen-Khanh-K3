@@ -1,10 +1,10 @@
-"""Persistent offline VieNeu worker: one model load, JSON-lines over stdin/stdout."""
+"""Persistent offline Kokoro worker: one model load, JSON-lines over stdin/stdout."""
 import base64
 import json
 import sys
 import io
 import wave
-from vieneu_voice import LocalVoice
+from kokoro_voice import LocalVoice
 
 sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')
@@ -28,7 +28,7 @@ for line in sys.stdin:
             with wave.open(output, 'wb') as joined:
                 joined.setnchannels(1)
                 joined.setsampwidth(2)
-                joined.setframerate(48000)
+                joined.setframerate(voice.sample_rate)
                 for chunk in voice.synthesize_stream(text):
                     print(json.dumps(dict(id=request['id'], chunk=base64.b64encode(chunk).decode('ascii'))), flush=True)
                     with wave.open(io.BytesIO(chunk), 'rb') as part:

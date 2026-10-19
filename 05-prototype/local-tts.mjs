@@ -5,7 +5,7 @@ import path from 'node:path';
 
 export function createLocalTts({spawnFn=spawn}={}){
  const root=path.dirname(fileURLToPath(import.meta.url));
- const python=process.env.TTS_PYTHON || path.join(root,'.tts-venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
+ const python=process.env.TTS_PYTHON || path.join(root,'.kokoro-venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
  let child,ready=false,opening,closed=false,sequence=0,activeId=null;
  const pending=new Map(),cache=new Map();let cacheBytes=0;
  function fail(error){ready=false;activeId=null;for(const task of pending.values())task.reject(error);pending.clear();}
@@ -45,7 +45,7 @@ export function createLocalTts({spawnFn=spawn}={}){
   });return opening;
  }
  return {
-  warmup,status(){return {engine:'vieneu-v3-turbo',local:true,ready,voice:'Thanh Bình'};},
+  warmup,status(){return {engine:'kokoro-vi',local:true,ready,voice:'Thành Đạt'};},
   async synthesize(text,{signal,onChunk}={}){
    signal?.throwIfAborted();
    if(typeof text!=='string'||!text.trim()||text.length>1200)throw new Error('Invalid text');

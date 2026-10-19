@@ -192,7 +192,7 @@ function submit(source = 'legacy') {
 }
 async function ask(question) {
   if (state.helpBusy || !state.guided || !state.configLoaded) return;
-  if (state.config.provider === 'openai' && !state.consent) { state.answer = { title: 'Cần cô/chú đồng ý trước', text: 'Tích ô đồng ý nếu muốn gửi câu hỏi dùng thử tới OpenAI. Cô/chú vẫn có thể đọc hướng dẫn có sẵn mà không gửi câu hỏi.', target: null }; render(); return; }
+  if (['openai','gemini'].includes(state.config.provider) && !state.consent) { state.answer = { title: 'Cần cô/chú đồng ý trước', text: 'Tích ô đồng ý nếu muốn gửi câu hỏi dùng thử tới dịch vụ AI. Cô/chú vẫn có thể đọc hướng dẫn có sẵn mà không gửi câu hỏi.', target: null }; render(); return; }
   if (!question.trim()) { announce('Cô/chú nhập câu hỏi trước nhé.'); return; }
   state.helpBusy = true;
   state.helpStreaming = false;
@@ -241,7 +241,7 @@ async function ask(question) {
     state.answer = data;
     if(healthMode!=='app'&&!data.fallback)state.healthHistory=[...history,{role:'user',content:question.slice(0,500)},{role:'assistant',content:data.text.slice(0,2000)}].slice(-6);
     chatbot.endReplyStream();
-    track('assistant_reply', { provider: ['mock', 'local', 'openai'].includes(data.provider) ? data.provider : 'unknown', fallback: Boolean(data.fallback) });
+    track('assistant_reply', { provider: ['mock', 'local', 'openai','gemini'].includes(data.provider) ? data.provider : 'unknown', fallback: Boolean(data.fallback) });
   } catch {
     if (version !== requestVersion) return;
     state.answer = healthMode==='app'?{ ...GUIDES[screen], fallback: true }:{title:'Chưa thể phân tích',text:'Mia chưa thể phân tích lúc này. Bạn có thể thử lại; nếu triệu chứng nặng hoặc tăng nhanh, hãy liên hệ cơ sở y tế.',target:null,fallback:true};

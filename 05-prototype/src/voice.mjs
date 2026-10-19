@@ -1,51 +1,40 @@
+import {transcribeGeminiLive,getWarmMicrophone} from './gemini-live.mjs';
+import {transcribeLive} from './transcribe-stream.mjs';
+import {recordAndTranscribe} from './record-transcribe.mjs';
+
 let activeRecognition;
 let generation = 0;
 let voiceConsent = false;
 
-// One short utterance per connection. Audio travels as a live WebRTC track;
-// only the completed transcript enters the existing chat and booking pipeline.
+// Bridge the separate live audio module to the existing chat/booking UI.
 class RealtimeRecognition {
   async start() {
     this.controller = new AbortController();
-    const current = () => !this.closed;
-    const fail = (message, error='network') => { if(current()) this.onerror?.({error,message}); this.abort(); };
-    this.timer=setTimeout(()=>fail('Đã hết thời gian nghe. Cô/chú bấm micro để nói lại.'),60000);
+    let captured=false;
     try {
-      const stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
-      if(!current()){stream.getTracks().forEach(track=>track.stop());return;}
-      this.stream=stream;
-      const pc=this.pc=new RTCPeerConnection();
-      for(const track of stream.getTracks())pc.addTrack(track,stream);
-      const channel=this.channel=pc.createDataChannel('oai-events');
-      channel.onopen=()=>{if(current())this.onstart?.();};
-      channel.onclose=()=>{if(current())fail();};
-      channel.onerror=()=>fail();
-      pc.onconnectionstatechange=()=>{if(['failed','disconnected'].includes(pc.connectionState))fail();};
-      let transcript='';let item;
-      channel.onmessage=({data})=>{
-        if(!current())return;
-        let event;try{event=JSON.parse(data);}catch{return;}
-        if(event.type==='error'||event.type==='conversation.item.input_audio_transcription.failed'){fail();return;}
-        if(event.type==='input_audio_buffer.speech_started'&&!item)item=event.item_id;
-        if(!event.type?.startsWith('conversation.item.input_audio_transcription.'))return;
-        if(item&&event.item_id!==item)return;
-        item=event.item_id;
-        const final=event.type.endsWith('.completed');
-        if(!final&&!event.type.endsWith('.delta'))return;
-        transcript=final?event.transcript:(transcript+(event.delta||''));
-        const result=[{transcript:transcript||''}];result.isFinal=final;
-        if(final)this.abort();
+      const response=await fetch('/api/config',{signal:this.controller.signal});
+      if(!response.ok)throw new Error('Configuration unavailable');
+      const config=await response.json();if(this.closed)return;
+      const liveGemini=config.voiceProvider==='gemini-live';
+      const gemini=config.voiceProvider==='gemini';
+      if(liveGemini?!window.WebSocket:gemini?!window.MediaRecorder:!window.RTCPeerConnection)throw new Error('Capture unavailable');
+      const stream=(liveGemini&&getWarmMicrophone())||await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:false});
+      if(this.closed){stream.getTracks().forEach(track=>track.stop());return;}
+      captured=true;
+      const emit=(transcript,final)=>{
+        if(this.closed)return;
+        const result=[{transcript}];result.isFinal=final;
         this.onresult?.({results:[result]});
       };
-      const offer=await pc.createOffer();if(!current())return;
-      await pc.setLocalDescription(offer);if(!current())return;
-      const response=await fetch('/api/voice',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sdp:offer.sdp,consent:true}),signal:this.controller.signal});
-      if(!current())return;
-      if(!response.ok){let message;try{message=(await response.json()).error;}catch{}fail(message);return;}
-      const sdp=await response.text();if(current())await pc.setRemoteDescription({type:'answer',sdp});
-    }catch(error){if(current())fail(undefined,error.name==='NotAllowedError'?'not-allowed':'network');}
+      const text=await (liveGemini?transcribeGeminiLive:gemini?recordAndTranscribe:transcribeLive)(stream,this.controller.signal,{
+        onPartial:text=>emit(text,false),
+        onReady:controls=>{this.finish=controls?.finish;if(!this.closed)this.onstart?.();},
+        onCommit:()=>{if(!this.closed)this.onprocessing?.();},
+      });
+      emit(text,true);
+    }catch(error){if(!this.closed)this.onerror?.({error:error.name==='NotAllowedError'?'not-allowed':'network',message:captured?error.message:undefined});}
   }
-  abort(){this.closed=true;clearTimeout(this.timer);this.controller?.abort();this.stream?.getTracks().forEach(track=>track.stop());this.channel?.close();this.pc?.close();}
+  abort(){this.closed=true;this.controller?.abort();}
   stop(){this.abort();}
 }
 
@@ -56,10 +45,12 @@ export function stopVoice() {
   try { recognition?.abort(); } catch { /* Already stopped. */ }
 }
 
+export function finishVoice(){activeRecognition?.finish?.();}
+
 export function mountVoice(form, onCommand, { onState = () => {}, onBeforeListen = () => {}, label: micLabel = '🎙 Nói yêu cầu' } = {}) {
   stopVoice();
   if (!form) return;
-  const Recognition = window.RTCPeerConnection && navigator.mediaDevices?.getUserMedia ? RealtimeRecognition : null;
+  const Recognition = (window.RTCPeerConnection||window.MediaRecorder) && window.AudioContext && navigator.mediaDevices?.getUserMedia ? RealtimeRecognition : null;
   const box = document.createElement('section');
   box.className = 'voice-control';
   box.setAttribute('aria-label', 'Yêu cầu bằng giọng nói');
@@ -72,7 +63,7 @@ export function mountVoice(form, onCommand, { onState = () => {}, onBeforeListen
   status.className = 'voice-status';
   status.setAttribute('role', 'status');
   status.hidden = false;
-  status.textContent = Recognition ? 'Âm thanh được gửi tới OpenAI. Ví dụ: “Tôi muốn đặt lịch khám”. Mia sẽ trả lời khi cô/chú nói xong.' : 'Trình duyệt này chưa hỗ trợ nhận giọng nói. Cô/chú vẫn có thể gõ câu hỏi hoặc bấm các lựa chọn.';
+  status.textContent = Recognition ? 'Bấm micro rồi chờ “Đang nghe” để nói. Âm thanh được gửi tới dịch vụ AI đang bật để chuyển thành chữ.' : 'Trình duyệt này chưa hỗ trợ nhận giọng nói. Cô/chú vẫn có thể gõ câu hỏi hoặc bấm các lựa chọn.';
   box.append(mic, status);
   form.before(box);
   let listening = false;
@@ -97,7 +88,7 @@ export function mountVoice(form, onCommand, { onState = () => {}, onBeforeListen
       return;
     }
     if (!voiceConsent) {
-      if (!window.confirm('Micro sẽ gửi âm thanh tới OpenAI để chuyển thành chữ. Giọng đọc câu trả lời chạy trên máy. Cô/chú đồng ý bật micro?')) return;
+      if (!window.confirm('Micro sẽ gửi âm thanh tới nhà cung cấp AI đang bật (Gemini hoặc OpenAI) để chuyển thành chữ. Giọng đọc câu trả lời chạy trên máy. Cô/chú đồng ý bật micro?')) return;
       voiceConsent = true;
     }
     startListening();
@@ -109,16 +100,13 @@ export function mountVoice(form, onCommand, { onState = () => {}, onBeforeListen
     stopVoice();
     localGeneration = generation;
     starting = true;
+    onState('connecting');
     mic.textContent = 'Dừng nghe'; mic.setAttribute('aria-pressed', 'true');
     status.textContent = 'Đang mở micro… Cô/chú cho phép dùng micro nếu trình duyệt hỏi nhé.';
     let recognition;
     try {
       recognition = new Recognition();
       activeRecognition = recognition;
-      recognition.lang = 'vi-VN';
-      recognition.continuous = false;
-      recognition.interimResults = true;
-      recognition.maxAlternatives = 1;
       const current = () => localGeneration === generation && box.isConnected;
       const idle = () => { starting = false; listening = false; mic.textContent = micLabel; mic.setAttribute('aria-pressed', 'false'); onState('waiting'); };
       recognition.onstart = () => {
@@ -132,11 +120,19 @@ export function mountVoice(form, onCommand, { onState = () => {}, onBeforeListen
         const results = Array.from(event.results || []);
         const text = results.map(result => result[0]?.transcript || '').join(' ').trim().slice(0, 500);
         status.textContent = text || 'Đang nghe…';
-        if (results.some(result => result.isFinal === false)) return;
+        if (results.some(result => result.isFinal === false)) {
+          const preview=document.querySelector('.mia-activity-copy p');
+          if(preview){preview.textContent=text||'Mia đang nghe…';preview.dataset.transcript='true';}
+          return;
+        }
         idle();
         if (!text) { status.textContent = 'Chưa nghe rõ. Cô/chú có thể nói lại hoặc gõ yêu cầu.'; return; }
         stopVoice();
         onCommand(text);
+      };
+      recognition.onprocessing = () => {
+        if(!current())return;
+        onState('transcribing');mic.textContent='Hủy nhận giọng';status.textContent='Đang chuyển lời nói thành chữ…';
       };
       recognition.onerror = event => {
         if (!current()) return;
