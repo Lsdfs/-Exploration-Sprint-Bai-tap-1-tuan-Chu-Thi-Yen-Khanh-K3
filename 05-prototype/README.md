@@ -2,27 +2,75 @@
 
 Prototype nghiên cứu cho bài tập Exploration Sprint, ưu tiên người cao tuổi ít quen ứng dụng. AI (Codex) hỗ trợ mã nguồn, giao diện, prompt và tài liệu. Các hồ sơ, cơ sở, giờ khám và lịch hẹn dùng trong demo là dữ liệu mô phỏng; không kết nối đặt lịch với bệnh viện.
 
-## Chạy prototype
+## Chạy trên Windows
 
-Gemini live giữ kết nối, micro và AudioContext trong 60 giây giữa các lượt nói hoàn tất để lượt tiếp theo không phải mở lại. Mỗi lượt hoàn tất đặt lại bộ đếm 60 giây. Micro vẫn mở trong thời gian nghỉ (trình duyệt có thể hiện biểu tượng micro), nhưng không gửi âm thanh tới Gemini khi chưa bấm nói. Hủy một lượt, đóng/ẩn tab hoặc hết thời gian nghỉ giải phóng các tài nguyên đang giữ. Lần mở đầu tiên vẫn cần chờ thiết lập với Gemini.
-
-Cấu hình nhận giọng hiện tại: `VOICE_PROVIDER=gemini-live`, `LIVE_TRANSCRIPT_ENABLED=true` dùng `gemini-3.5-transcribe-live` với tiếng Việt `vi-VN`. Chữ tạm hiện liên tục trên bảng trạng thái; chỉ câu hoàn tất đi vào hội thoại. Khóa Gemini ở server, trình duyệt nhận token tạm thời một lần. Để tắt live, đặt `LIVE_TRANSCRIPT_ENABLED=false` trong `.env` rồi khởi động lại server; micro quay về Gemini nhận đoạn thu, chat giữ nguyên. Không có công tắc mới trên giao diện.
-
-Cần Node.js 22 trở lên. Trong thư mục `05-prototype/`, chạy:
+Cần Node.js 22 trở lên và Chrome/Edge mới. Python chỉ cần cho giọng đọc cục bộ. Từ thư mục gốc repo:
 
 ```powershell
+cd 05-prototype
+node --version
 npm.cmd start
 ```
 
-Mở **http://127.0.0.1:4173**. Không mở `src/index.html` trực tiếp bằng `file://`. Chế độ mặc định có hướng dẫn và luồng đặt lịch mô phỏng, không cần API key hoặc cài dependency Node.
+Mở **http://127.0.0.1:4173**, không mở HTML bằng `file://`. Server không cần `npm install` vì runtime Node chỉ dùng thư viện có sẵn. Khi chưa có `.env`, giao diện và đặt lịch mẫu chạy được; chat AI/micro cần khóa riêng. Dừng server bằng **Ctrl+C**.
 
-Để dùng AI chat và nhận giọng nói thật, sao chép `.env.example` thành `.env`, đặt `AI_PROVIDER=gemini` và `GEMINI_API_KEY`, rồi khởi động lại server. Key chỉ ở server; không đưa `.env` lên Git. Cấu hình nhánh Gemini lấy từ dự án `double fun`: `GEMINI_CHAT_MODEL=gemini-3.5-flash-lite` cho chat và `GEMINI_TRANSCRIBE_MODEL=gemini-3.8-flash` cho nhận âm thanh tiếng Việt.
+### Cấu hình Gemini
 
-Micro thu trọn câu trong bộ nhớ trình duyệt, chờ 900 ms im lặng sau khi có lời nói rồi gửi tới `/api/voice/transcribe`. Gemini trả bản chép lời sau khi nhận đoạn thu, chưa có chữ chạy trực tiếp khi đang nói. Dừng nghe hoặc chuyển trang sẽ hủy thu/gửi âm thanh. Cần đồng ý chia sẻ âm thanh trước khi cấp quyền micro; không nhập thông tin người bệnh thật. Có thể chọn riêng `AI_PROVIDER=openai` để dùng nhánh WebRTC với `OPENAI_LIVE_TRANSCRIBE_MODEL`; Gemini không tự chuyển âm thanh sang OpenAI khi gặp lỗi.
+Dừng server. Chỉ sao chép mẫu khi chưa có `.env`, tránh ghi đè khóa đang dùng:
 
-Có thể bấm **Nói xong** để gửi ngay khi đã nói hết câu, bỏ thời gian đợi khoảng lặng. Trạng thái mở micro, đang nghe, nhận lời nói và chuẩn bị/trả lời hiện ngay trên ô nhập, kèm thời gian đã chờ và nút dừng. Gemini 3.8 giữ mức suy luận `medium` như cấu hình mặc định; thử `low` chưa cho thấy nhanh hơn trên mẫu tổng hợp được đo.
+```powershell
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
+notepad .env
+```
 
-Giọng đọc dùng VieNeu cục bộ, giọng Thanh Bình. Cần cài Python và tải model riêng theo [hướng dẫn TTS](tts/README.md). Model và môi trường Python không nằm trong bản nộp. Khi giọng đọc không sẵn sàng, vẫn có thể gõ và bấm; ứng dụng báo lỗi giọng đọc.
+Điền khóa của bạn:
+
+```dotenv
+AI_PROVIDER=gemini
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+GEMINI_CHAT_MODEL=gemini-3.5-flash-lite
+VOICE_PROVIDER=gemini-live
+LIVE_TRANSCRIPT_ENABLED=true
+```
+
+Khóa cần quyền truy cập model và còn quota. Live dùng `gemini-3.5-transcribe-live`, tiếng Việt `vi-VN`, hiện cố định trong server. Không cần OpenAI API key cho cấu hình này. Khóa chỉ ở server; trình duyệt nhận token tạm thời một lần.
+
+Chạy lại `npm.cmd start`, tải lại trang, mở Mia, đồng ý chia sẻ âm thanh và cấp quyền micro. Chờ “Mia đang nghe” rồi nói. Chữ tạm hiện trên bảng trạng thái; chỉ transcript hoàn tất được đưa sang chat. **Nói xong** chốt câu; **Dừng nghe/Hủy nhận giọng** hủy lượt.
+
+Micro, AudioContext và kết nối được giữ 60 giây giữa các lượt hoàn tất; mỗi lượt đếm lại 60 giây. Micro vẫn mở khi nghỉ nhưng không gửi âm thanh khi chưa bấm nói. Hủy lượt, ẩn/đóng tab hoặc hết thời gian nghỉ giải phóng tài nguyên đang giữ.
+
+### Tắt live
+
+Đổi `.env` rồi khởi động lại server và tải lại trang:
+
+```dotenv
+LIVE_TRANSCRIPT_ENABLED=false
+GEMINI_TRANSCRIBE_MODEL=gemini-3.8-flash
+GEMINI_TRANSCRIBE_THINKING_LEVEL=medium
+```
+
+Micro quay về thu trọn câu rồi gửi Gemini chép lời, không hiện chữ trực tiếp khi đang nói. Chat giữ nguyên. Không có công tắc live trên giao diện; Gemini lỗi không tự chuyển âm thanh sang OpenAI.
+
+### Giọng đọc và kiểm tra cấu hình
+
+Giọng hiện tại là **Kokoro tiếng Việt / Thành Đạt**. Làm theo [hướng dẫn TTS](tts/README.md); Python, venv và model không có sẵn trong Git. Có thể dùng giao diện/chat/micro trước khi cài TTS; thiếu TTS thì vẫn có chữ nhưng không có giọng đọc.
+
+Khi server chạy, mở PowerShell khác:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:4173/api/config
+Invoke-RestMethod http://127.0.0.1:4173/api/tts
+```
+
+- Config mong đợi: `provider=gemini`, `voiceProvider=gemini-live`, `transcriptionModel=gemini-3.5-transcribe-live`, `ready=true`, `voiceReady=true`. Cờ ready ở config chỉ xác nhận có khóa, không xác minh quota/kết nối upstream.
+- Giọng đọc sẵn sàng: `engine=kokoro-vi`, `voice=Thành Đạt`, `ready=true`; console báo `Mia: local Vietnamese TTS ready.`
+- Cổng bận: Ctrl+C server cũ hoặc đổi `PORT` trong `.env` và mở URL theo cổng mới.
+- Không có micro: kiểm tra quyền trình duyệt/hệ điều hành. Điện thoại/máy khác truy cập qua IP cần HTTPS; `127.0.0.1` chỉ trỏ tới chính thiết bị đó. `HOST` mặc định chỉ mở trên máy chạy server.
+- Gemini lỗi: kiểm tra API key, quyền model, quota và mạng. Không chia sẻ `.env` hoặc ảnh chứa khóa.
+- TTS lỗi: làm theo hướng dẫn TTS; đặt `TTS_PYTHON` thành đường dẫn tuyệt đối tới Python có đủ thư viện nếu dùng venv khác.
+- Sau mỗi lần đổi `.env`: Ctrl+C, `npm.cmd start`, tải lại trang. Không có tự nạp lại cấu hình.
+
+Hướng dẫn chính dành cho Windows/Python 3.12; chưa kiểm chứng cài mới trên Linux/macOS. Bộ test phát triển giữ cục bộ ngoài bản nộp; `package.json` phát hành không có script `npm test`.
 
 ## Luồng trình diễn
 
@@ -43,4 +91,4 @@ Bản nháp và lịch mẫu lưu trong sessionStorage của tab; bắt đầu p
 - [Need statement và bằng chứng](../03-need-statement/need-statement.md).
 - [Rủi ro và giảm thiểu](../06-rui-ro-dao-duc/risk-assessment.md).
 
-Trước khi đóng gói, 66/66 kiểm tra logic/API đã qua. Kiểm tra kỹ thuật không thay thế thử người thật; chất lượng nghe/nhận giọng nói với người cao tuổi và thiết bị thật còn cần đánh giá. Bộ test, ảnh tham chiếu, báo cáo kỹ thuật, benchmark và mẫu giọng được giữ cục bộ ngoài phạm vi repo nộp bài.
+Lần kiểm tra cục bộ gần nhất: 92/92 kiểm tra logic/API đã qua. Kiểm tra kỹ thuật không thay thế thử người thật; chất lượng nghe/nhận giọng nói với người cao tuổi và thiết bị thật còn cần đánh giá. Bộ test, ảnh tham chiếu, báo cáo kỹ thuật, benchmark và mẫu giọng được giữ cục bộ ngoài phạm vi repo nộp bài.

@@ -57,3 +57,8 @@ Thumbs.db
 !/05-prototype/tts/download_vieneu.py
 !/05-prototype/tts/requirements-lock.txt
 !/05-prototype/tts/vieneu-sources.json
+
+# Current Kokoro runtime and installation scripts.
+!/05-prototype/tts/kokoro_voice.py
+!/05-prototype/tts/setup-kokoro.ps1
+!/05-prototype/tts/download-kokoro.ps1
