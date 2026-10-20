@@ -7,6 +7,7 @@ import {createActivityIndicator} from './activity.mjs';
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const robot = (small = false) => `<img class="robot-avatar mia-avatar ${small ? 'robot-small' : ''}" src="/assets/mia.png" alt="Mia, trợ lý sức khỏe MyVinmec" width="156" height="156">`;
 const greeting = 'Xin chào! Mình là Mia. Bạn cần mình giúp gì hôm nay?';
+const symptomsPrompt = 'Cô/chú có thể mô tả triệu chứng, nói không muốn chia sẻ hoặc chọn chuyên khoa bên dưới.';
 const names = { appointments:'Lịch hẹn', results:'Kết quả khám', doctors:'Tìm bác sĩ', personal:'Thông tin cá nhân' };
 function appHelp(message) {
   const text = normalize(message);
@@ -112,9 +113,10 @@ export function createChatbot(hooks) {
     try { if(model.active) sessionStorage.setItem('mia-draft',JSON.stringify(model.draft)); else sessionStorage.removeItem('mia-draft'); } catch { model.note = 'Không thể giữ bản nháp khi tải lại tab. Bạn vẫn có thể tiếp tục đặt lịch ở đây.'; }
     hooks.render();
   }
-  function askNext() {
+  function askNext(explanation = '') {
+    model.awaitingSymptoms = false;
     model.question = model.edit || nextQuestion(model.draft, hooks.state.dates);
-    reply(prompts[model.question]); redraw();
+    reply(explanation ? `${explanation} ${prompts[model.question]}` : prompts[model.question]); redraw();
   }
   function startBooking(text = '') {
     hooks.state.healthMode='app';hooks.state.healthHistory=[];
@@ -146,10 +148,23 @@ export function createChatbot(hooks) {
     const fields = [['profile','Người khám',s.person],['service','Chuyên khoa',s.service],['location','Cơ sở',s.location],['doctor','Bác sĩ',DOCTORS.find(d=>d.id===model.draft.doctor)?.name || 'Không chọn bác sĩ cụ thể'],['date','Ngày',s.date],['time','Giờ',s.time]];
     return `<section class="chat-booking-review" aria-label="Kiểm tra lịch hẹn"><dl>${fields.map(([field,label,value])=>`<div><dt>${label}</dt><dd>${esc(value)}</dd><button data-chat-edit="${field}" aria-label="Sửa ${field === 'profile' ? 'người khám' : label.toLowerCase()}" ${hooks.state.bookingBusy ? 'disabled' : ''}>Sửa</button></div>`).join('')}</dl><p class="chat-demo-note">Lịch hẹn và bác sĩ là dữ liệu mẫu. Không gửi tới bệnh viện.</p><button class="chat-confirm" data-chat="confirm" ${hooks.state.bookingBusy ? 'disabled' : ''}>${hooks.state.bookingBusy ? 'Đang ghi nhận…' : 'Xác nhận đặt lịch'}</button></section>`;
   }
+  function bookingProgress() {
+    const s = summary(model.draft,hooks.state.dates);
+    const fields = [
+      ['Người khám',PROFILES.find(p=>p.id===model.draft.profile)?.name],
+      ['Cơ sở',LOCATIONS.find(l=>l.id===model.draft.location)?.name],
+      ['Chuyên khoa',SERVICES.find(v=>v.id===model.draft.service)?.name],
+      ['Bác sĩ',model.draft.doctor==='any'?'Không chọn bác sĩ cụ thể':doctorsFor(model.draft.service,model.draft.location).find(d=>d.id===model.draft.doctor)?.name],
+      ['Ngày',hooks.state.dates.some(d=>d.id===model.draft.date)?s.date:''],
+      ['Giờ',model.draft.time],
+    ].filter(([,value])=>value);
+    if(!fields.length || model.question==='review')return '';
+    return `<section class="chat-booking-progress" role="region" aria-label="Thông tin đã chọn"><strong>Thông tin đã chọn</strong><dl>${fields.map(([label,value])=>`<div><dt>${label}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl><p class="chat-demo-note">Bản nháp · Chưa gửi yêu cầu</p></section>`;
+  }
   function markup() {
     const state = hooks.state, guide = state.answer || GUIDES[state.screen] || GUIDES.home;
     const open = state.helpOpen && (!intro || state.miaPage);
-    return `${intro && !state.miaPage ? '<div class="mia-intro-dimmer"></div><section class="mia-intro-bubble" role="dialog" aria-modal="true" aria-label="Làm quen với Mia"><p>Nếu bạn cần giúp đỡ thì hãy nói chuyện với Mia nhé!</p><button data-chat="intro-dismiss" autofocus>Đã hiểu</button><span aria-hidden="true">↘</span></section>' : ''}${!open && !model.tour ? `<button class="robot-launcher ${intro ? 'mia-intro-spotlight' : ''}" data-action="${intro ? 'mia-intro-open' : 'mobile-help'}" aria-label="Mở hướng dẫn">${robot(true)}</button>` : ''}<aside class="assistant chatbot-panel ${state.miaPage ? 'mia-conversation' : ''}" data-status="${model.status}" aria-label="Chatbot trợ lý MyVinmec" ${open ? '' : 'hidden'}><header class="chatbot-header">${state.miaPage ? '<button class="mia-chat-back" data-action="home" aria-label="Quay lại trang chủ">←</button>' : robot(true)}<div><h2>${state.miaPage ? 'Trợ lý sức khỏe AI MIA' : 'Mia · Trợ lý của bạn'}</h2><span class="robot-state">${({waiting:'Đang chờ bạn',listening:'Đang nghe…',processing:'Đang xử lý…',answering:'Đang trả lời'})[model.status]}</span></div><button class="chat-collapse" data-action="mobile-help" aria-label="Thu gọn hướng dẫn">−</button></header><div class="chatbot-scroll">${state.healthMode && state.healthMode!=='app' ? `<section class="mia-health-banner"><strong>${state.healthMode==='nutrition' ? 'Phân tích dinh dưỡng' : 'Kiểm tra triệu chứng'}</strong><span>${state.healthMode==='nutrition' ? 'Ước tính từ mô tả món ăn · Không phân tích ảnh' : 'Thông tin tham khảo · Không thay thế khám bác sĩ'}</span><button data-chat="health-exit">Quay lại Mia</button></section>` : ''}${state.miaPage && !model.active && !model.messages.length ? hooks.miaWelcome() : ''}${state.guided ? `${!model.active ? `<div class="chat-greeting" ${model.messages.length || state.miaPage ? 'hidden' : ''}>${greeting}</div><div class="chat-main-actions" ${state.miaPage ? 'hidden' : ''}><button data-chat="start">Đặt lịch khám</button><button data-chat="guide-menu">Hướng dẫn dùng app</button></div>` : ''}<div class="chat-messages" role="log" aria-label="Cuộc trò chuyện" aria-live="polite">${model.messages.filter((m, index) => !(model.active && index === model.messages.length - 1 && m.role === 'assistant' && Object.values(prompts).includes(m.text))).map(m=>`<p class="chat-message ${m.role}">${esc(m.text)}</p>`).join('')}</div>${model.note ? `<p class="chat-note" role="status">${esc(model.note)}</p>` : ''}${model.active ? `<div class="chat-prompt">${esc(prompts[model.question])}</div>${model.question === 'review' ? review() : choices()}<div class="chat-step-controls"><button data-chat="booking-back">Quay lại</button><button data-chat="booking-stop">Dừng đặt lịch</button></div>` : ''}${model.submitted ? '<button class="chat-confirm" data-chat="appointments">Xem lịch hẹn</button>' : ''}${state.answer ? `<div class="guide-message" role="status"><h3>${esc(guide.title)}</h3><p>${esc(guide.text)}</p>${guide.fallback ? '<p class="fallback-note">AI chưa phản hồi được. Đang dùng hướng dẫn có sẵn.</p>' : ''}</div>` : ''}</div><div class="chat-composer">${state.helpBusy ? `<div class="chat-wait" role="status" aria-live="polite">${state.helpStreaming ? 'Mia đang trả lời…' : state.helpSlow ? 'Mia đang mất lâu hơn dự kiến. Bạn có thể tiếp tục chờ hoặc dừng để thử lại.' : 'Đang xử lý câu hỏi của bạn…'}<button type="button" data-chat="cancel-wait">${state.helpStreaming ? 'Dừng phản hồi' : 'Dừng chờ'}</button></div>` : ''}<form id="help-form"><label for="help-question">Bạn muốn mình giúp gì?</label><div class="question-row"><input id="help-question" name="question" maxlength="500" placeholder="Hỏi về sức khỏe &amp; y tế…" autocomplete="off" ${model.status === 'processing' || state.helpBusy ? 'disabled' : ''}><button class="send-button" type="submit" aria-label="Gửi câu hỏi" ${!state.configLoaded || model.status === 'processing' || state.helpBusy ? 'disabled' : ''}>➜</button></div></form></div>` : '<h3>Cô/chú đang tự thao tác</h3><p>Khi cần, bạn có thể bật trợ lý trở lại.</p><button class="button secondary" data-action="toggle-guide">Bật hướng dẫn</button></div>'}</aside>${model.tour ? tourMarkup() : ''}`;
+    return `${intro && !state.miaPage ? '<div class="mia-intro-dimmer"></div><section class="mia-intro-bubble" role="dialog" aria-modal="true" aria-label="Làm quen với Mia"><p>Nếu bạn cần giúp đỡ thì hãy nói chuyện với Mia nhé!</p><button data-chat="intro-dismiss" autofocus>Đã hiểu</button><span aria-hidden="true">↘</span></section>' : ''}${!open && !model.tour ? `<button class="robot-launcher ${intro ? 'mia-intro-spotlight' : ''}" data-action="${intro ? 'mia-intro-open' : 'mobile-help'}" aria-label="Mở hướng dẫn">${robot(true)}</button>` : ''}<aside class="assistant chatbot-panel ${state.miaPage ? 'mia-conversation' : ''}" data-status="${model.status}" aria-label="Chatbot trợ lý MyVinmec" ${open ? '' : 'hidden'}><header class="chatbot-header">${state.miaPage ? '<button class="mia-chat-back" data-action="home" aria-label="Quay lại trang chủ">←</button>' : robot(true)}<div><h2>${state.miaPage ? 'Trợ lý sức khỏe AI MIA' : 'Mia · Trợ lý của bạn'}</h2><span class="robot-state">${({waiting:'Đang chờ bạn',listening:'Đang nghe…',processing:'Đang xử lý…',answering:'Đang trả lời'})[model.status]}</span></div><button class="chat-collapse" data-action="mobile-help" aria-label="Thu gọn hướng dẫn">−</button></header><div class="chatbot-scroll">${state.healthMode && state.healthMode!=='app' ? `<section class="mia-health-banner"><strong>${state.healthMode==='nutrition' ? 'Phân tích dinh dưỡng' : 'Kiểm tra triệu chứng'}</strong><span>${state.healthMode==='nutrition' ? 'Ước tính từ mô tả món ăn · Không phân tích ảnh' : 'Thông tin tham khảo · Không thay thế khám bác sĩ'}</span><button data-chat="health-exit">Quay lại Mia</button></section>` : ''}${state.miaPage && !model.active && !model.messages.length ? hooks.miaWelcome() : ''}${state.guided ? `${!model.active ? `<div class="chat-greeting" ${model.messages.length || state.miaPage ? 'hidden' : ''}>${greeting}</div><div class="chat-main-actions" ${state.miaPage ? 'hidden' : ''}><button data-chat="start">Đặt lịch khám</button><button data-chat="guide-menu">Hướng dẫn dùng app</button></div>` : ''}<div class="chat-messages" role="log" aria-label="Cuộc trò chuyện" aria-live="polite">${model.messages.filter((m, index) => !(model.active && index === model.messages.length - 1 && m.role === 'assistant' && Object.values(prompts).includes(m.text))).map(m=>`<p class="chat-message ${m.role}">${esc(m.text)}</p>`).join('')}</div>${model.note ? `<p class="chat-note" role="status">${esc(model.note)}</p>` : ''}${model.active ? `${bookingProgress()}<div class="chat-prompt">${esc(model.awaitingSymptoms ? symptomsPrompt : prompts[model.question])}</div>${model.question === 'review' ? review() : choices()}<div class="chat-step-controls"><button data-chat="booking-back">Quay lại</button><button data-chat="booking-stop">Dừng đặt lịch</button></div>` : ''}${model.submitted ? '<button class="chat-confirm" data-chat="appointments">Xem lịch hẹn</button>' : ''}${state.answer ? `<div class="guide-message" role="status"><h3>${esc(guide.title)}</h3><p>${esc(guide.text)}</p>${guide.fallback ? '<p class="fallback-note">AI chưa phản hồi được. Đang dùng hướng dẫn có sẵn.</p>' : ''}</div>` : ''}</div><div class="chat-composer">${state.helpBusy ? `<div class="chat-wait" role="status" aria-live="polite">${state.helpStreaming ? 'Mia đang trả lời…' : state.helpSlow ? 'Mia đang mất lâu hơn dự kiến. Bạn có thể tiếp tục chờ hoặc dừng để thử lại.' : 'Đang xử lý câu hỏi của bạn…'}<button type="button" data-chat="cancel-wait">${state.helpStreaming ? 'Dừng phản hồi' : 'Dừng chờ'}</button></div>` : ''}<form id="help-form"><label for="help-question">Bạn muốn mình giúp gì?</label><div class="question-row"><input id="help-question" name="question" maxlength="500" placeholder="Hỏi về sức khỏe &amp; y tế…" autocomplete="off" ${model.status === 'processing' || state.helpBusy ? 'disabled' : ''}><button class="send-button" type="submit" aria-label="Gửi câu hỏi" ${!state.configLoaded || model.status === 'processing' || state.helpBusy ? 'disabled' : ''}>➜</button></div></form></div>` : '<h3>Cô/chú đang tự thao tác</h3><p>Khi cần, bạn có thể bật trợ lý trở lại.</p><button class="button secondary" data-action="toggle-guide">Bật hướng dẫn</button></div>'}</aside>${model.tour ? tourMarkup() : ''}`;
   }
   function tourMarkup() {
     const step = tourSteps[model.tour.destination][model.tour.index];
@@ -197,6 +212,9 @@ export function createChatbot(hooks) {
     if (version !== model.version) return;
     setStatus('answering');
     const command = normalize(text).trim();
+    if (/\b(?:khoan|dung|tam dung)\s+(?:doc|noi)\b/.test(command)) {
+      stopReading();model.note='Mia đã dừng đọc để cô/chú xem màn hình. Thông tin đã chọn được giữ nguyên.';setStatus('waiting');redraw();return;
+    }
     if(hooks.state.healthMode&&hooks.state.healthMode!=='app'){
       if(/^(thoat|dung|quay lai|ve mia|ve trang chu)[.!\s]*$/.test(command)){hooks.state.healthMode='app';hooks.state.healthHistory=[];model.messages=[];hooks.open('mia');return;}
       if(!/^(dat.*lich|toi muon dat.*lich)/.test(command)){redraw();await hooks.ask(text);return;}
@@ -224,6 +242,12 @@ export function createChatbot(hooks) {
       }
     }
     if (model.active) {
+      if (/(?:cach|huong dan|lam sao|the nao).*dat.*lich|dat.*lich.*(?:the nao|ra sao)/.test(command)) {
+        reply(`Mia giữ các thông tin cô/chú đã chọn và hỏi lần lượt phần còn thiếu. Sau đó cô/chú kiểm tra bản tóm tắt, sửa nếu cần và chủ động xác nhận để lưu lịch mẫu. ${prompts[model.question]}`);redraw();return;
+      }
+      if (/benh vien.*(?:nhan|co).*lich.*chua|(?:gui|nhan).*lich.*chua/.test(command)) {
+        reply('Mia chưa gửi lịch tới bệnh viện. Thông tin hiện là bản nháp; sau khi cô/chú kiểm tra và chủ động xác nhận, ứng dụng chỉ lưu lịch mô phỏng ở trạng thái Chờ xác nhận.');redraw();return;
+      }
       if (/doc lai|kiem tra.*thong tin/.test(command)) {const s=summary(model.draft,hooks.state.dates);reply(Object.values(s).join('. '));redraw();return;}
       if (/quay lai|buoc truoc/.test(command)) {const fields=['profile','service','location','doctor','date','time','review'];model.edit=fields[Math.max(0,fields.indexOf(model.question)-1)];askNext();return;}
       if (/dung dat lich/.test(command)) {model.active=false;reply('Mia đã dừng đặt lịch.');redraw();return;}
@@ -240,21 +264,24 @@ export function createChatbot(hooks) {
       if(edit){model.edit=edit[0];askNext();return;}
     }
     const knownSlots=extractBookingSlots(text,hooks.state.dates,model.draft).slots;
+    const contextualHelp = model.awaitingSymptoms && !knownSlots.service ? appHelp(text) : '';
+    if(contextualHelp){reply(contextualHelp);redraw();return;}
+    const request = classifyRequest(text);
+    if(request.kind==='guide'){startTour(request.destination);return;}
+    if(request.kind==='open'){openPage(request.destination);return;}
     const support=bookingHelp(text,model.awaitingSymptoms?'symptoms':model.question || (/chuyen khoa|khoa nao/.test(command)?'service':''));
     if(support && !knownSlots.service){
       if(support.askSymptoms){model.awaitingSymptoms=true;reply(support.text);redraw();return;}
+      if(!support.service && !support.doctor){reply(support.text);redraw();return;}
       model.awaitingSymptoms=false;
       if(!model.active){model.draft=newDraft();model.active=true;}
-      merge(support.service?{service:support.service}:{doctor:support.doctor});
-      model.edit='';reply(support.text);askNext();return;
+      merge({...knownSlots,...(support.service?{service:support.service}:{doctor:support.doctor})});
+      model.edit='';askNext(support.text);return;
     }
     if(knownSlots.service)model.awaitingSymptoms=false;
     const help = knownSlots.service ? '' : appHelp(text);
     if(help){reply(help);redraw();return;}
-    const request = classifyRequest(text);
-    if (request.kind === 'guide') startTour(request.destination);
-    else if (request.kind === 'open') openPage(request.destination);
-    else if (request.kind === 'booking') startBooking(text);
+    if (request.kind === 'booking') startBooking(text);
     else if (request.kind === 'confirm') { if (/xac nhan.*dat lich/.test(command)) confirmBooking(); else {reply('Bạn mở lịch hẹn để kiểm tra trước khi hủy nhé.');redraw();} }
     else if (request.kind === 'medical') { reply('Mình không chẩn đoán hoặc chọn chuyên khoa từ triệu chứng. Bạn hãy liên hệ nhân viên y tế để được hỗ trợ chọn chuyên khoa nhé.'); redraw(); await hooks.ask(text); }
     else if (model.active) {
@@ -319,7 +346,7 @@ export function createChatbot(hooks) {
     else if(action==='specialty-help'){model.awaitingSymptoms=true;reply(bookingHelp('không rõ','service').text);redraw();}
     else if(action==='all-times'){model.draft.period='';redraw();}
     else if(action==='booking-back'){const fields=['profile','service','location','doctor','date','time','review'];const index=fields.indexOf(model.question);model.edit=fields[Math.max(0,index-1)];askNext();}
-    else if(action==='booking-stop'){model.active=false;model.edit='';reply('Mình đã dừng đặt lịch. Chưa có lịch nào được tạo.');redraw();}
+    else if(action==='booking-stop'){model.active=false;model.edit='';model.awaitingSymptoms=false;reply('Mình đã dừng đặt lịch. Chưa có lịch nào được tạo.');redraw();}
     else if(action==='confirm') { confirmBooking(); } else if(action==='tour-open') openPage(model.tour.destination);
     else if(action==='tour-stop'){model.tour=null;redraw();}
     else if(action==='tour-next'){
@@ -339,5 +366,5 @@ export function createChatbot(hooks) {
     if(!model.active) return;
     if(success){try{sessionStorage.removeItem('mia-draft');}catch{}model.active=false;model.submitted=true;model.note='';reply('Đã ghi nhận lịch hẹn mô phỏng. Trạng thái: Chờ xác nhận. Bạn có thể xem lại lịch hẹn.');}
     else {model.note=text;setStatus('answering');}
-  }, cancelPending(){stopReading();model.version++;setStatus('waiting');}, reset(){stopReading();model.version++;Object.assign(model,{messages:[],active:false,draft:newDraft(),question:'',edit:'',tour:null,status:'waiting',submitted:false,note:''});}, collapse(){stopReading();stopVoice();setStatus('waiting');}, positionTour };
+  }, cancelPending(){stopReading();model.version++;setStatus('waiting');}, reset(){stopReading();model.version++;Object.assign(model,{messages:[],active:false,draft:newDraft(),question:'',edit:'',awaitingSymptoms:false,tour:null,status:'waiting',submitted:false,note:''});}, collapse(){stopReading();stopVoice();setStatus('waiting');}, positionTour };
 }

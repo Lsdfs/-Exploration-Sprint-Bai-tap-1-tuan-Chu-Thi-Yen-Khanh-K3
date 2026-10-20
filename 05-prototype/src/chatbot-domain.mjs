@@ -15,9 +15,19 @@ export const doctorsFor = (service, location) => DOCTORS.filter(d => d.service =
 export function bookingHelp(message, question) {
   const text=normalize(message);
   if(/dau nguc|kho tho|bat tinh|chay mau khong cam|dot ngot/.test(text))return null;
+  if(/khong ro|khong biet|chua biet|khong hieu/.test(text)) {
+    const guidance = {
+      profile:'Trong bài thử, chọn Bác An nếu đặt cho bản thân hoặc Bác Bình nếu đặt cho người thân. Cô/chú muốn đặt cho ai ạ?',
+      location:'Cô/chú chọn cơ sở thuận tiện trong danh sách, ví dụ Times City ở Hà Nội hoặc Central Park ở TP. Hồ Chí Minh. Mia chưa chọn cơ sở thay cô/chú.',
+      date:'Cô/chú có thể bấm một ngày trong danh sách hoặc nói “ngày đầu tiên trong danh sách”, “ngày thứ hai trong danh sách”. Mia chưa chọn ngày thay cô/chú.',
+      time:'Cô/chú chọn một giờ còn trống trên màn hình, ví dụ nói “chín giờ” hoặc “hai giờ chiều”. Giờ bị làm mờ đã hết chỗ trong lịch mẫu.',
+      review:'Cô/chú kiểm tra người khám, cơ sở, chuyên khoa, bác sĩ, ngày và giờ trên bản tóm tắt. Có thể bấm Sửa; chỉ xác nhận khi thông tin đã đúng. Lịch mẫu chưa gửi tới bệnh viện.',
+    }[question];
+    if(guidance)return {text:guidance};
+  }
   if(question==='doctor' && /khong ro|khong biet|nao.*ranh|nao.*trong|ai cung duoc|tuy|bat ky/.test(text))
     return {doctor:'any',text:'Dạ, cô/chú không cần chọn bác sĩ cụ thể. Mia sẽ hiển thị các giờ còn trống trong lịch mẫu để cô/chú chọn; chưa tra được lịch thật của bệnh viện.'};
-  if(question==='service' && /khong ro|khong biet|chua biet|goi y.*khoa|khoa nao/.test(text))
+  if(question==='service' && /khong ro|khong biet|chua biet|khong hieu|goi y.*khoa|khoa nao/.test(text))
     return {askSymptoms:true,text:'Cô/chú đang có triệu chứng hoặc khó chịu ở đâu, bắt đầu từ khi nào ạ? Nếu chưa rõ hoặc không muốn chia sẻ, Mia có thể hỗ trợ chọn khám đa khoa sàng lọc (Nội tổng quát) trước.'};
   if(question==='symptoms') return {service:'general',text:'Dạ, mình có thể khám đa khoa sàng lọc (Nội tổng quát) trước để bác sĩ đánh giá và hướng dẫn chuyên khoa phù hợp. Cô/chú không bắt buộc kể triệu chứng để đặt lịch. Mia sẽ ghi vào bản nháp để cô/chú kiểm tra trước khi xác nhận.'};
   return null;

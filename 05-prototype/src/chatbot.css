@@ -15,6 +15,8 @@
 .chat-composer .voice-control{margin-top:6px;padding:0;border:0;background:transparent}
 .chat-composer .chat-demo-note{margin:6px 0 0;font-size:11px}
 .chat-context{margin-top:18px;border-top:1px solid #e4ede9;padding-top:12px}
+.chat-booking-progress{margin-top:14px;padding:12px;border:1px solid #a0cec0;border-radius:12px;background:#f7fbf9;color:#245448}
+.chat-booking-progress>strong{font-size:15px}.chat-booking-progress dl{display:grid;gap:6px;margin:8px 0}.chat-booking-progress dl>div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:8px;font-size:14px;line-height:1.4}.chat-booking-progress dt{color:#526d63}.chat-booking-progress dd{margin:0;overflow-wrap:anywhere}.chat-booking-progress .chat-demo-note{margin-bottom:0}
 .chat-context summary,.chat-settings summary{cursor:pointer;color:#4b6b62;font-size:14px;min-height:36px;align-content:center}
 .chat-settings{margin-top:6px}
 .chat-settings .chat-preferences{margin:0;padding:8px 0;border:0}
