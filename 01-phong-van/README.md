@@ -14,9 +14,8 @@ P1 và P2 được phỏng vấn ngày **18/10/2026**. Cả hai đồng ý tham 
 
 Ký hiệu `[Bạn bổ sung: …]` dành cho phần chưa có trong nguồn được đối chiếu; không có nghĩa câu đó chưa được hỏi. Số phút nhớ lại là ước lượng. Chỉ dùng quote có căn cứ; phần ngoài ghi âm ghi dạng tóm tắt và nguồn bổ sung.
 
-**Đã có ba hồ sơ phỏng vấn P1/P2/P3.** P3 đã dùng AI có sẵn bằng chữ/biểu mẫu và luồng thường trên MyVinmec; tính năng voiceover bổ sung chưa có kết quả thử người dùng. Bài tập yêu cầu ít nhất 3 phỏng vấn dịch vụ ẩn danh theo đề bài trong tài liệu đề bài Exploration Sprint (lưu cục bộ), mục 6.
+**Đã có ba hồ sơ phỏng vấn P1/P2/P3.** P3 đã dùng AI có sẵn bằng chữ/biểu mẫu và luồng thường trên MyVinmec; đây không phải thử Mia. Prototype Mia có log định tính T1/T2 riêng, trong đó T1 ghi rõ dùng giọng đọc; chưa có kết quả thử lại sau sửa hoặc so sánh bật/tắt voiceover. Người thực hiện xác nhận người thử là P1 và P3, dùng điện thoại ngày 19/10/2026 và đã đồng ý thử/gửi âm thanh lên AI; bản sau sửa cùng ngày. Chưa xác nhận riêng ánh xạ T1/T2 với từng người; xem [trạng thái và giới hạn của log](../05-prototype/user-test-log.md). Bài tập yêu cầu ít nhất 3 phỏng vấn dịch vụ ẩn danh theo đề bài trong tài liệu đề bài Exploration Sprint (lưu cục bộ), mục 6.
 
-AI hỗ trợ biên soạn và tổ chức nội dung; đã thử nhận dạng nhưng không dùng kết quả thiếu tin cậy làm bằng chứng. Không tạo câu trả lời hoặc số đo thay người tham gia. Không công khai tên, bệnh án, tình trạng sức khỏe, tài khoản, OTP; chỉ giữ quá trình dịch vụ. Phương pháp: tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), mục 4 và 13.
 
 ## Thông tin người phỏng vấn đã bổ sung
 

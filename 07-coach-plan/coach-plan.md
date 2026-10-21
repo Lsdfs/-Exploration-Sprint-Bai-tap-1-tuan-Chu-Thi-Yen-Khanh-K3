@@ -14,7 +14,7 @@ Tôi đồng hành cùng 5–10 bạn K4, chia nhóm khoảng 2 người, luân 
 | Tuần 5 | Thử vòng 2, kiểm tra lại và đề xuất; Cổng 2 chọn nhóm vào Demo Day |
 | Tuần 6 | Đóng gói, diễn tập, nêu giới hạn; Demo Day/Cổng 3 chọn đề tài đi tiếp |
 
-Mỗi vòng sprint thử với **3–5 người dùng Vinmec**, báo cáo: phản hồi – đã tối ưu gì – chỉ số đo – tác động dự kiến. Bài ứng tuyển hiện tại dự kiến thử prototype với **2 người**, chưa có kết quả voiceover; không tính quan sát AI có sẵn của P3 thành thử tính năng mới.
+Mỗi vòng sprint thử với **3–5 người dùng Vinmec**, báo cáo: phản hồi – đã tối ưu gì – chỉ số đo – tác động dự kiến. Bài ứng tuyển đã có log định tính **T1/T2**; T1 ghi rõ sử dụng giọng đọc. Người thực hiện xác nhận hai người thật P1 và P3 đã thử trên điện thoại ngày 19/10/2026 và đã đồng ý thử/gửi âm thanh lên AI, đáp ứng số lượng tối thiểu 2–3 người của bài ứng tuyển. Bản sau sửa cùng ngày; chưa có mã build/commit. Chưa có kết quả thử lại sau sửa hoặc so bật/tắt voiceover. Quan sát AI có sẵn của P3 được giữ riêng, không tính thành thử Mia. Xem [log](../05-prototype/user-test-log.md).
 
 **Khi nhóm kẹt.** Thiếu người: rà tiêu chí và nhờ đầu mối giới thiệu, chốt người liên hệ/hạn. Chưa rõ pain: dựng lại một sự kiện cụ thể, đối chiếu lời kể và hành vi, tìm cả điều đang tốt. Bất đồng giải pháp: so giả định và chọn phép thử cùng tác vụ. Prototype lỗi: tái hiện, ưu tiên lỗi chặn tác vụ/an toàn, giao sửa và kiểm tra chéo. Vượt khả năng nhóm thì chuyển đầu mối Vinmec–VRIC; có rủi ro dữ liệu thì dừng phần liên quan.
 

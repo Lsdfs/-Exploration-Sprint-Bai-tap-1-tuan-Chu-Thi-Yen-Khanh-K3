@@ -1,6 +1,6 @@
 # Need statement — Tiếp cận đặt lịch cho người cao tuổi ít quen app
 
-Bản làm việc ngày 19/10/2026 dựa trên P1, P2 và P3. AI hỗ trợ tổng hợp. P3 đã sử dụng AI có sẵn và luồng thường trên MyVinmec ngày 17/10/2026; tính năng voiceover bổ sung của dự án chưa có kết quả thử người dùng.
+Bằng chứng khám phá được tổng hợp ngày 19/10/2026 từ P1, P2 và P3; trạng thái thử được rà lại ngày 21/10/2026. AI hỗ trợ tổng hợp. P3 đã sử dụng AI có sẵn và luồng thường trên MyVinmec ngày 17/10/2026, không phải thử Mia. Prototype Mia đã có ghi nhận định tính T1/T2, trong đó T1 ghi rõ dùng giọng đọc. P1 và P3 thử bằng điện thoại ngày 19/10/2026, đã đồng ý theo xác nhận của người thực hiện; bản sau sửa cùng ngày, chưa có mã build/commit; chưa có kết quả thử lại sau sửa hoặc so sánh bật/tắt voiceover. Xem [trạng thái bằng chứng](../05-prototype/user-test-log.md).
 
 ## Problem – Population – Outcome
 
@@ -30,7 +30,7 @@ Nguồn: P1-E07–P1-E09, P2-E07–P2-E09 và P3-E06–P3-E15 trong [tổng hợ
 
 Tính năng voiceover bổ sung cho luồng AI có thể giúp người dùng nghe hướng dẫn thay vì chỉ đọc; nhập giọng nói là một khả năng riêng cần kiểm chứng về nhận dạng và sửa lỗi. P1-E08/P2-E08 và P3-E11–P3-E15 hỗ trợ nghiên cứu công đọc/nhập và hiểu bước tiếp theo. P3 đánh giá AI có sẵn dễ làm hơn, nhưng đã dùng chữ và biểu mẫu; đây chưa phải bằng chứng ưa thích hoặc hiệu quả voiceover.
 
-Để đo giá trị tính năng thêm, so cùng luồng AI trên cùng dữ liệu giả: A tắt voiceover, B bật voiceover; giữ nguyên biểu mẫu và thông tin, đổi thứ tự giữa người thử nếu có thể. Nếu đánh giá nhập giọng nói, làm phép thử riêng, không đổi cả đầu vào và đầu ra rồi quy tác động cho voiceover. Form có hướng dẫn là phương án tham khảo về độ đơn giản. Người dùng quyết định; không giả định có API bệnh viện thật. Đây là kế hoạch, chưa có kết quả thử tính năng mới.
+Để đo giá trị tính năng thêm, so cùng luồng AI trên cùng dữ liệu giả: A tắt voiceover, B bật voiceover; giữ nguyên biểu mẫu và thông tin, đổi thứ tự giữa người thử nếu có thể. Nếu đánh giá nhập giọng nói, làm phép thử riêng, không đổi cả đầu vào và đầu ra rồi quy tác động cho voiceover. Form có hướng dẫn là phương án tham khảo về độ đơn giản. Người dùng quyết định; không giả định có API bệnh viện thật. Phép so sánh này là kế hoạch tiếp theo, chưa có kết quả; log T1/T2 đã có chỉ phản ánh thử định tính, không phải phép đo lợi ích riêng của voiceover.
 
 ## Baseline, mục tiêu và cách đo đề xuất
 

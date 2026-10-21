@@ -51,6 +51,6 @@ Chọn **đăng ký/đặt lịch trước khi đến viện**, dựa trên I02�
 - P1/P2 đã từng thử đặt lịch trước chưa, dùng thiết bị nào, ai hỗ trợ và vì sao chưa dùng kênh khác: hỏi sự kiện cụ thể, không tự điền.
 - Các khoảng 2 tiếng ở khám và ra về có chồng nhau không: cần xác nhận lại; không tính tổng ngày khám.
 - Đã có thời gian tác vụ và một lần gõ hơn 1 phút ở P3; chưa có baseline được kiểm soát cho Mia hoặc tốc độ gõ chuẩn. Không có cảm xúc nguyên văn theo từng bước.
-- [Ghi chép tự dùng MyVinmec](myvinmec-notes.md) đã được bổ sung: người làm bài thao tác thuận lợi ở cả hai luồng, không ghi nhận điểm nghẽn. Đây là trường hợp đối chiếu với P3; không suy rộng khó khăn P3 cho mọi người dùng. Không có số đo tự dùng riêng hoặc kết quả thử voiceover.
+- [Ghi chép tự dùng MyVinmec](myvinmec-notes.md) đã được bổ sung: người làm bài thao tác thuận lợi ở cả hai luồng, không ghi nhận điểm nghẽn. Đây là trường hợp đối chiếu với P3; không suy rộng khó khăn P3 cho mọi người dùng. Tổng khám phá app là 13 phút; không có số đo riêng tác vụ đặt lịch/từng luồng. Thử Mia có giọng đọc của P1/P3 ngày 19/10 được ghi riêng trong [log T1/T2](../05-prototype/user-test-log.md), chưa có thử lại sau sửa hoặc so bật/tắt voiceover.
 
 Nguồn phương pháp: tài liệu học AI Thực Chiến (bản ghi chú cá nhân lưu cục bộ), mục 4–5 và 13. AI chỉ hỗ trợ tổ chức bằng chứng, không tạo lời người tham gia.
